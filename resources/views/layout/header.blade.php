@@ -32,6 +32,7 @@
     <link href="{{ asset('assets/select2-3.5.3/select2-bootstrap.css') }}" rel="stylesheet" />
     <link rel="stylesheet" href="{{ asset('assets/plugins/toastr/toastr.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/plugins/nprogress/nprogress.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.2/assets/owl.carousel.css">
 
     <!-- Conditional page load script -->
     @if(request()->segment(1) === 'dashboard')
