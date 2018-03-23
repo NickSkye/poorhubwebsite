@@ -81,7 +81,8 @@
             </div>
 
             <div class="col-md-6">
-                {!! get_option('google_map_embedded_code') !!}
+                {{--{!! get_option('google_map_embedded_code') !!}--}}
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3323.3536481551782!2d-117.8723502847969!3d33.59612748073246!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80dce0f0ed714801%3A0x425fb58ffd9d12f3!2s3334+East+Coast+Hwy%2C+Corona+Del+Mar%2C+CA+92625!5e0!3m2!1sen!2sus!4v1521843196656" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
             </div>
         </div>
     </div>
