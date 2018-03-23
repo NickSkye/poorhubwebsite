@@ -23,9 +23,9 @@ class HomeController extends Controller
      * Installation view
      */
     public function installation(){
-        if ( file_exists(base_path('.env')) ) {
-            return redirect(route('home'));
-        }
+//        if ( file_exists(base_path('.env')) ) {
+//            return redirect(route('home'));
+//        }
 
         return view('theme/installation');
     }
