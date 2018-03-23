@@ -30,16 +30,39 @@ class ParserTest extends TestCase
     protected function tearDown()
     {
         $this->parser = null;
-
-        chmod(__DIR__.'/Fixtures/not_readable.yml', 0644);
     }
 
     /**
      * @dataProvider getDataFormSpecifications
      */
-    public function testSpecifications($expected, $yaml, $comment)
+    public function testSpecifications($expected, $yaml, $comment, $deprecated)
     {
+        $deprecations = array();
+
+        if ($deprecated) {
+            set_error_handler(function ($type, $msg) use (&$deprecations) {
+                if (E_USER_DEPRECATED !== $type) {
+                    restore_error_handler();
+
+                    if (class_exists('PHPUnit_Util_ErrorHandler')) {
+                        return call_user_func_array('PHPUnit_Util_ErrorHandler::handleError', func_get_args());
+                    }
+
+                    return call_user_func_array('PHPUnit\Util\ErrorHandler::handleError', func_get_args());
+                }
+
+                $deprecations[] = $msg;
+            });
+        }
+
         $this->assertEquals($expected, var_export($this->parser->parse($yaml), true), $comment);
+
+        if ($deprecated) {
+            restore_error_handler();
+
+            $this->assertCount(1, $deprecations);
+            $this->assertContains('Using the comma as a group separator for floats is deprecated since version 3.2 and will be removed in 4.0 on line 1.', $deprecations[0]);
+        }
     }
 
     public function getDataFormSpecifications()
@@ -47,9 +70,31 @@ class ParserTest extends TestCase
         return $this->loadTestsFromFixtureFiles('index.yml');
     }
 
+    /**
+     * @dataProvider getNonStringMappingKeysData
+     */
+    public function testNonStringMappingKeys($expected, $yaml, $comment)
+    {
+        $this->assertSame($expected, var_export($this->parser->parse($yaml, Yaml::PARSE_KEYS_AS_STRINGS), true), $comment);
+    }
+
     public function getNonStringMappingKeysData()
     {
         return $this->loadTestsFromFixtureFiles('nonStringKeys.yml');
+    }
+
+    /**
+     * @group legacy
+     * @dataProvider getLegacyNonStringMappingKeysData
+     */
+    public function testLegacyNonStringMappingKeys($expected, $yaml, $comment)
+    {
+        $this->assertSame($expected, var_export($this->parser->parse($yaml), true), $comment);
+    }
+
+    public function getLegacyNonStringMappingKeysData()
+    {
+        return $this->loadTestsFromFixtureFiles('legacyNonStringKeys.yml');
     }
 
     public function testTabsInYaml()
@@ -424,29 +469,65 @@ EOF;
     public function testObjectSupportEnabled()
     {
         $input = <<<'EOF'
-foo: !php/object O:30:"Symfony\Component\Yaml\Tests\B":1:{s:1:"b";s:3:"foo";}
+foo: !php/object:O:30:"Symfony\Component\Yaml\Tests\B":1:{s:1:"b";s:3:"foo";}
 bar: 1
 EOF;
         $this->assertEquals(array('foo' => new B(), 'bar' => 1), $this->parser->parse($input, Yaml::PARSE_OBJECT), '->parse() is able to parse objects');
     }
 
-    public function testObjectSupportDisabledButNoExceptions()
+    /**
+     * @group legacy
+     */
+    public function testObjectSupportEnabledPassingTrue()
     {
         $input = <<<'EOF'
-foo: !php/object O:30:"Symfony\Tests\Component\Yaml\B":1:{s:1:"b";s:3:"foo";}
+foo: !php/object:O:30:"Symfony\Component\Yaml\Tests\B":1:{s:1:"b";s:3:"foo";}
 bar: 1
 EOF;
+        $this->assertEquals(array('foo' => new B(), 'bar' => 1), $this->parser->parse($input, false, true), '->parse() is able to parse objects');
+    }
+
+    /**
+     * @group legacy
+     */
+    public function testObjectSupportEnabledWithDeprecatedTag()
+    {
+        $input = <<<'EOF'
+foo: !!php/object:O:30:"Symfony\Component\Yaml\Tests\B":1:{s:1:"b";s:3:"foo";}
+bar: 1
+EOF;
+        $this->assertEquals(array('foo' => new B(), 'bar' => 1), $this->parser->parse($input, Yaml::PARSE_OBJECT), '->parse() is able to parse objects');
+    }
+
+    /**
+     * @dataProvider invalidDumpedObjectProvider
+     */
+    public function testObjectSupportDisabledButNoExceptions($input)
+    {
         $this->assertEquals(array('foo' => null, 'bar' => 1), $this->parser->parse($input), '->parse() does not parse objects');
     }
 
     /**
      * @dataProvider getObjectForMapTests
      */
-    public function testObjectForMap($yaml, $expected)
+    public function testObjectForMap($yaml, $expected, $explicitlyParseKeysAsStrings = false)
     {
         $flags = Yaml::PARSE_OBJECT_FOR_MAP;
 
+        if ($explicitlyParseKeysAsStrings) {
+            $flags |= Yaml::PARSE_KEYS_AS_STRINGS;
+        }
+
         $this->assertEquals($expected, $this->parser->parse($yaml, $flags));
+    }
+
+    /**
+     * @group legacy
+     * @dataProvider getObjectForMapTests
+     */
+    public function testObjectForMapEnabledWithMappingUsingBooleanToggles($yaml, $expected)
+    {
+        $this->assertEquals($expected, $this->parser->parse($yaml, false, false, true));
     }
 
     public function getObjectForMapTests()
@@ -496,32 +577,28 @@ YAML;
         $expected->map = new \stdClass();
         $expected->map->{1} = 'one';
         $expected->map->{2} = 'two';
-        $tests['numeric-keys'] = array($yaml, $expected);
+        $tests['numeric-keys'] = array($yaml, $expected, true);
 
         $yaml = <<<'YAML'
 map:
-  '0': one
-  '1': two
+  0: one
+  1: two
 YAML;
         $expected = new \stdClass();
         $expected->map = new \stdClass();
         $expected->map->{0} = 'one';
         $expected->map->{1} = 'two';
-        $tests['zero-indexed-numeric-keys'] = array($yaml, $expected);
+        $tests['zero-indexed-numeric-keys'] = array($yaml, $expected, true);
 
         return $tests;
     }
 
     /**
+     * @dataProvider invalidDumpedObjectProvider
      * @expectedException \Symfony\Component\Yaml\Exception\ParseException
      */
-    public function testObjectsSupportDisabledWithExceptions()
+    public function testObjectsSupportDisabledWithExceptions($yaml)
     {
-        $yaml = <<<'EOF'
-foo: !php/object:O:30:"Symfony\Tests\Component\Yaml\B":1:{s:1:"b";s:3:"foo";}
-bar: 1
-EOF;
-
         $this->parser->parse($yaml, Yaml::PARSE_EXCEPTION_ON_INVALID_TYPE);
     }
 
@@ -534,6 +611,33 @@ EOF;
         );
 
         $this->assertSame($expected, $this->parser->parse($yaml));
+    }
+
+    /**
+     * @group legacy
+     * @dataProvider invalidDumpedObjectProvider
+     * @expectedException \Symfony\Component\Yaml\Exception\ParseException
+     */
+    public function testObjectsSupportDisabledWithExceptionsUsingBooleanToggles($yaml)
+    {
+        $this->parser->parse($yaml, true);
+    }
+
+    public function invalidDumpedObjectProvider()
+    {
+        $yamlTag = <<<'EOF'
+foo: !!php/object:O:30:"Symfony\Tests\Component\Yaml\B":1:{s:1:"b";s:3:"foo";}
+bar: 1
+EOF;
+        $localTag = <<<'EOF'
+foo: !php/object:O:30:"Symfony\Tests\Component\Yaml\B":1:{s:1:"b";s:3:"foo";}
+bar: 1
+EOF;
+
+        return array(
+            'yaml-tag' => array($yamlTag),
+            'local-tag' => array($localTag),
+        );
     }
 
     /**
@@ -672,42 +776,6 @@ EOT;
         $this->assertSame($expected, $this->parser->parse($yaml));
     }
 
-    public function testNonStringFollowedByCommentEmbeddedInMapping()
-    {
-        $yaml = <<<'EOT'
-a:
-    b:
-        {}
-# comment
-    d:
-        1.1
-# another comment
-EOT;
-        $expected = array(
-            'a' => array(
-                'b' => array(),
-                'd' => 1.1,
-            ),
-        );
-
-        $this->assertSame($expected, $this->parser->parse($yaml));
-    }
-
-    public function testMultiLineStringLastResortParsing()
-    {
-        $yaml = <<<'EOT'
-test:
-  You can have things that don't look like strings here
-  true
-  yes you can
-EOT;
-        $expected = array(
-            'test' => 'You can have things that don\'t look like strings here true yes you can',
-        );
-
-        $this->assertSame($expected, $this->parser->parse($yaml));
-    }
-
     /**
      * @expectedException \Symfony\Component\Yaml\Exception\ParseException
      */
@@ -737,9 +805,6 @@ EOF
     }
 
     /**
-     * @expectedException \Symfony\Component\Yaml\Exception\ParseException
-     * @expectedExceptionMessage Duplicate key "child" detected
-     *
      * > It is an error for two equal keys to appear in the same mapping node.
      * > In such a case the YAML processor may continue, ignoring the second
      * > `key: value` pair and issuing an appropriate warning. This strategy
@@ -748,6 +813,7 @@ EOF
      *
      * @see http://yaml.org/spec/1.2/spec.html#id2759572
      * @see http://yaml.org/spec/1.1/#id932806
+     * @group legacy
      */
     public function testMappingDuplicateKeyBlock()
     {
@@ -768,8 +834,7 @@ EOD;
     }
 
     /**
-     * @expectedException \Symfony\Component\Yaml\Exception\ParseException
-     * @expectedExceptionMessage Duplicate key "child" detected
+     * @group legacy
      */
     public function testMappingDuplicateKeyFlow()
     {
@@ -786,13 +851,13 @@ EOD;
     }
 
     /**
-     * @expectedException \Symfony\Component\Yaml\Exception\ParseException
+     * @group legacy
      * @dataProvider getParseExceptionOnDuplicateData
+     * @expectedDeprecation Duplicate key "%s" detected whilst parsing YAML. Silent handling of duplicate mapping keys in YAML is deprecated %s and will throw \Symfony\Component\Yaml\Exception\ParseException in 4.0 on line %d.
+     * throws \Symfony\Component\Yaml\Exception\ParseException in 4.0
      */
     public function testParseExceptionOnDuplicate($input, $duplicateKey, $lineNumber)
     {
-        $this->expectExceptionMessage(sprintf('Duplicate key "%s" detected at line %d', $duplicateKey, $lineNumber));
-
         Yaml::parse($input);
     }
 
@@ -1015,8 +1080,8 @@ EOF;
     }
 
     /**
-     * @expectedException \Symfony\Component\Yaml\Exception\ParseException
-     * @expectedExceptionMessage Numeric keys are not supported. Quote your evaluable mapping keys instead
+     * @group legacy
+     * @expectedDeprecation Implicit casting of numeric key to string is deprecated since version 3.3 and will throw \Symfony\Component\Yaml\Exception\ParseException in 4.0. Quote your evaluable mapping keys instead on line 2.
      */
     public function testFloatKeys()
     {
@@ -1026,12 +1091,19 @@ foo:
     1.3: "baz"
 EOF;
 
-        $this->parser->parse($yaml);
+        $expected = array(
+            'foo' => array(
+                '1.2' => 'bar',
+                '1.3' => 'baz',
+            ),
+        );
+
+        $this->assertEquals($expected, $this->parser->parse($yaml));
     }
 
     /**
-     * @expectedException \Symfony\Component\Yaml\Exception\ParseException
-     * @expectedExceptionMessage Non-string keys are not supported. Quote your evaluable mapping keys instead
+     * @group legacy
+     * @expectedDeprecation Implicit casting of non-string key to string is deprecated since version 3.3 and will throw \Symfony\Component\Yaml\Exception\ParseException in 4.0. Quote your evaluable mapping keys instead on line 1.
      */
     public function testBooleanKeys()
     {
@@ -1040,32 +1112,45 @@ true: foo
 false: bar
 EOF;
 
-        $this->parser->parse($yaml);
-    }
-
-    public function testExplicitStringCasting()
-    {
-        $yaml = <<<'EOF'
-'1.2': "bar"
-!!str 1.3: "baz"
-
-'true': foo
-!!str false: bar
-
-!!str null: 'null'
-'~': 'null'
-EOF;
-
         $expected = array(
-            '1.2' => 'bar',
-            '1.3' => 'baz',
-            'true' => 'foo',
-            'false' => 'bar',
-            'null' => 'null',
-            '~' => 'null',
+            1 => 'foo',
+            0 => 'bar',
         );
 
         $this->assertEquals($expected, $this->parser->parse($yaml));
+    }
+
+    public function testExplicitStringCastingOfFloatKeys()
+    {
+        $yaml = <<<'EOF'
+foo:
+    1.2: "bar"
+    1.3: "baz"
+EOF;
+
+        $expected = array(
+            'foo' => array(
+                '1.2' => 'bar',
+                '1.3' => 'baz',
+            ),
+        );
+
+        $this->assertEquals($expected, $this->parser->parse($yaml, Yaml::PARSE_KEYS_AS_STRINGS));
+    }
+
+    public function testExplicitStringCastingOfBooleanKeys()
+    {
+        $yaml = <<<'EOF'
+true: foo
+false: bar
+EOF;
+
+        $expected = array(
+            'true' => 'foo',
+            'false' => 'bar',
+        );
+
+        $this->assertEquals($expected, $this->parser->parse($yaml, Yaml::PARSE_KEYS_AS_STRINGS));
     }
 
     /**
@@ -1469,38 +1554,6 @@ YAML;
         $this->assertSame(array('foobar' => 'foobar'), $this->parser->parse($yaml));
     }
 
-    public function testCommentCharactersInMultiLineQuotedStrings()
-    {
-        $yaml = <<<YAML
-foo:
-    foobar: 'foo
-      #bar'
-    bar: baz
-YAML;
-        $expected = array(
-            'foo' => array(
-                'foobar' => 'foo #bar',
-                'bar' => 'baz',
-            ),
-        );
-
-        $this->assertSame($expected, $this->parser->parse($yaml));
-    }
-
-    public function testBlankLinesInQuotedMultiLineString()
-    {
-        $yaml = <<<YAML
-foobar: 'foo
-
-    bar'
-YAML;
-        $expected = array(
-            'foobar' => "foo\nbar",
-        );
-
-        $this->assertSame($expected, $this->parser->parse($yaml));
-    }
-
     public function testParseMultiLineUnquotedString()
     {
         $yaml = <<<EOT
@@ -1602,18 +1655,6 @@ EOF;
     public function taggedValuesProvider()
     {
         return array(
-            'scalars' => array(
-                array(
-                    'foo' => new TaggedValue('inline', 'bar'),
-                    'quz' => new TaggedValue('long', 'this is a long text'),
-                ),
-                <<<YAML
-foo: !inline bar
-quz: !long >
-  this is a long
-  text
-YAML
-            ),
             'sequences' => array(
                 array(new TaggedValue('foo', array('yaml')), new TaggedValue('quz', array('bar'))),
                 <<<YAML
@@ -1638,16 +1679,7 @@ YAML
 - !quz {foo: bar, quz: !bar {one: bar}}
 YAML
             ),
-            'spaces-around-tag-value-in-sequence' => array(
-                array(new TaggedValue('foo', 'bar')),
-                '[ !foo bar ]',
-            ),
         );
-    }
-
-    public function testNonSpecificTagSupport()
-    {
-        $this->assertSame('12', $this->parser->parse('! 12'));
     }
 
     /**
@@ -1660,26 +1692,17 @@ YAML
     }
 
     /**
-     * @expectedException \Symfony\Component\Yaml\Exception\ParseException
-     * @expectedExceptionMessage Tags support is not enabled. Enable the `Yaml::PARSE_CUSTOM_TAGS` flag to use "!iterator" at line 1 (near "!iterator foo").
+     * @group legacy
+     * @expectedDeprecation Using the unquoted scalar value "!iterator foo" is deprecated since version 3.3 and will be considered as a tagged value in 4.0. You must quote it on line 1.
      */
     public function testUnsupportedTagWithScalar()
     {
-        $this->parser->parse('!iterator foo');
+        $this->assertEquals('!iterator foo', $this->parser->parse('!iterator foo'));
     }
 
     /**
      * @expectedException \Symfony\Component\Yaml\Exception\ParseException
-     * @expectedExceptionMessage The string "!!iterator foo" could not be parsed as it uses an unsupported built-in tag at line 1 (near "!!iterator foo").
-     */
-    public function testUnsupportedBuiltInTagWithScalar()
-    {
-        $this->parser->parse('!!iterator foo');
-    }
-
-    /**
-     * @expectedException \Symfony\Component\Yaml\Exception\ParseException
-     * @expectedExceptionMessage The built-in tag "!!foo" is not implemented at line 1 (near "!!foo").
+     * @expectedExceptionMessage The built-in tag "!!foo" is not implemented.
      */
     public function testExceptionWhenUsingUnsuportedBuiltInTags()
     {
@@ -1687,8 +1710,8 @@ YAML
     }
 
     /**
-     * @expectedException \Symfony\Component\Yaml\Exception\ParseException
-     * @expectedExceptionMessage Complex mappings are not supported at line 1 (near "? "1"").
+     * @group legacy
+     * @expectedDeprecation Starting an unquoted string with a question mark followed by a space is deprecated since version 3.3 and will throw \Symfony\Component\Yaml\Exception\ParseException in 4.0 on line 1.
      */
     public function testComplexMappingThrowsParseException()
     {
@@ -1702,8 +1725,8 @@ YAML;
     }
 
     /**
-     * @expectedException \Symfony\Component\Yaml\Exception\ParseException
-     * @expectedExceptionMessage Complex mappings are not supported at line 2 (near "? "1"").
+     * @group legacy
+     * @expectedDeprecation Starting an unquoted string with a question mark followed by a space is deprecated since version 3.3 and will throw \Symfony\Component\Yaml\Exception\ParseException in 4.0 on line 2.
      */
     public function testComplexMappingNestedInMappingThrowsParseException()
     {
@@ -1718,8 +1741,8 @@ YAML;
     }
 
     /**
-     * @expectedException \Symfony\Component\Yaml\Exception\ParseException
-     * @expectedExceptionMessage Complex mappings are not supported at line 1 (near "- ? "1"").
+     * @group legacy
+     * @expectedDeprecation Starting an unquoted string with a question mark followed by a space is deprecated since version 3.3 and will throw \Symfony\Component\Yaml\Exception\ParseException in 4.0 on line 1.
      */
     public function testComplexMappingNestedInSequenceThrowsParseException()
     {
@@ -1752,7 +1775,7 @@ INI;
         $parser = new Parser();
 
         $tests = array();
-        $files = $parser->parseFile(__DIR__.'/Fixtures/'.$testsFile);
+        $files = $parser->parse(file_get_contents(__DIR__.'/Fixtures/'.$testsFile));
         foreach ($files as $file) {
             $yamls = file_get_contents(__DIR__.'/Fixtures/'.$file.'.yml');
 
@@ -1768,7 +1791,7 @@ INI;
                 } else {
                     eval('$expected = '.trim($test['php']).';');
 
-                    $tests[] = array(var_export($expected, true), $test['yaml'], $test['test']);
+                    $tests[] = array(var_export($expected, true), $test['yaml'], $test['test'], isset($test['deprecated']) ? $test['deprecated'] : false);
                 }
             }
         }
@@ -1812,10 +1835,10 @@ YAML;
     {
         $yaml = <<<YAML
 transitions:
-    !php/const 'Symfony\Component\Yaml\Tests\B::FOO':
+    !php/const:Symfony\Component\Yaml\Tests\B::FOO:
         from:
-            - !php/const 'Symfony\Component\Yaml\Tests\B::BAR'
-        to: !php/const 'Symfony\Component\Yaml\Tests\B::BAZ'
+            - !php/const:Symfony\Component\Yaml\Tests\B::BAR
+        to: !php/const:Symfony\Component\Yaml\Tests\B::BAZ
 YAML;
         $expected = array(
             'transitions' => array(
@@ -1829,6 +1852,29 @@ YAML;
         );
 
         $this->assertSame($expected, $this->parser->parse($yaml, Yaml::PARSE_CONSTANT));
+    }
+
+    public function testPhpConstantTagMappingKeyWithKeysCastToStrings()
+    {
+        $yaml = <<<YAML
+transitions:
+    !php/const:Symfony\Component\Yaml\Tests\B::FOO:
+        from:
+            - !php/const:Symfony\Component\Yaml\Tests\B::BAR
+        to: !php/const:Symfony\Component\Yaml\Tests\B::BAZ
+YAML;
+        $expected = array(
+            'transitions' => array(
+                'foo' => array(
+                    'from' => array(
+                        'bar',
+                    ),
+                    'to' => 'baz',
+                ),
+            ),
+        );
+
+        $this->assertSame($expected, $this->parser->parse($yaml, Yaml::PARSE_CONSTANT | Yaml::PARSE_KEYS_AS_STRINGS));
     }
 
     public function testMergeKeysWhenMappingsAreParsedAsObjects()
@@ -1868,43 +1914,6 @@ YAML;
         $this->assertEquals($expected, $this->parser->parse($yaml, Yaml::PARSE_OBJECT_FOR_MAP));
     }
 
-    public function testFilenamesAreParsedAsStringsWithoutFlag()
-    {
-        $file = __DIR__.'/Fixtures/index.yml';
-
-        $this->assertSame($file, $this->parser->parse($file));
-    }
-
-    public function testParseFile()
-    {
-        $this->assertInternalType('array', $this->parser->parseFile(__DIR__.'/Fixtures/index.yml'));
-    }
-
-    /**
-     * @expectedException \Symfony\Component\Yaml\Exception\ParseException
-     * @expectedExceptionMessageRegExp #^File ".+/Fixtures/nonexistent.yml" does not exist\.$#
-     */
-    public function testParsingNonExistentFilesThrowsException()
-    {
-        $this->parser->parseFile(__DIR__.'/Fixtures/nonexistent.yml');
-    }
-
-    /**
-     * @expectedException \Symfony\Component\Yaml\Exception\ParseException
-     * @expectedExceptionMessageRegExp #^File ".+/Fixtures/not_readable.yml" cannot be read\.$#
-     */
-    public function testParsingNotReadableFilesThrowsException()
-    {
-        if ('\\' === DIRECTORY_SEPARATOR) {
-            $this->markTestSkipped('chmod is not supported on Windows');
-        }
-
-        $file = __DIR__.'/Fixtures/not_readable.yml';
-        chmod($file, 0200);
-
-        $this->parser->parseFile($file);
-    }
-
     public function testParseReferencesOnMergeKeys()
     {
         $yaml = <<<YAML
@@ -1931,120 +1940,6 @@ YAML;
         );
 
         $this->assertSame($expected, $this->parser->parse($yaml));
-    }
-
-    public function testParseReferencesOnMergeKeysWithMappingsParsedAsObjects()
-    {
-        $yaml = <<<YAML
-mergekeyrefdef:
-    a: foo
-    <<: &quux
-        b: bar
-        c: baz
-mergekeyderef:
-    d: quux
-    <<: *quux
-YAML;
-        $expected = (object) array(
-            'mergekeyrefdef' => (object) array(
-                'a' => 'foo',
-                'b' => 'bar',
-                'c' => 'baz',
-            ),
-            'mergekeyderef' => (object) array(
-                'd' => 'quux',
-                'b' => 'bar',
-                'c' => 'baz',
-            ),
-        );
-
-        $this->assertEquals($expected, $this->parser->parse($yaml, Yaml::PARSE_OBJECT_FOR_MAP));
-    }
-
-    /**
-     * @expectedException \Symfony\Component\Yaml\Exception\ParseException
-     * @expectedExceptionMessage Reference "foo" does not exist
-     */
-    public function testEvalRefException()
-    {
-        $yaml = <<<EOE
-foo: { &foo { a: Steve, <<: *foo} }
-EOE;
-        $this->parser->parse($yaml);
-    }
-
-    /**
-     * @dataProvider indentedMappingData
-     */
-    public function testParseIndentedMappings($yaml, $expected)
-    {
-        $this->assertSame($expected, $this->parser->parse($yaml));
-    }
-
-    public function indentedMappingData()
-    {
-        $tests = array();
-
-        $yaml = <<<YAML
-foo:
-  - bar: "foobar"
-    # A comment
-    baz: "foobaz"
-YAML;
-        $expected = array(
-            'foo' => array(
-                array(
-                    'bar' => 'foobar',
-                    'baz' => 'foobaz',
-                ),
-            ),
-        );
-        $tests['comment line is first line in indented block'] = array($yaml, $expected);
-
-        $yaml = <<<YAML
-foo:
-    - bar:
-        # comment
-        baz: [1, 2, 3]
-YAML;
-        $expected = array(
-            'foo' => array(
-                array(
-                    'bar' => array(
-                        'baz' => array(1, 2, 3),
-                    ),
-                ),
-            ),
-        );
-        $tests['mapping value on new line starting with a comment line'] = array($yaml, $expected);
-
-        $yaml = <<<YAML
-foo:
-  -
-    bar: foobar
-YAML;
-        $expected = array(
-            'foo' => array(
-                array(
-                    'bar' => 'foobar',
-                ),
-            ),
-        );
-        $tests['mapping in sequence starting on a new line'] = array($yaml, $expected);
-
-        $yaml = <<<YAML
-foo:
-
-    bar: baz
-YAML;
-        $expected = array(
-            'foo' => array(
-                'bar' => 'baz',
-            ),
-        );
-        $tests['blank line at the beginning of an indented mapping value'] = array($yaml, $expected);
-
-        return $tests;
     }
 }
 

@@ -186,13 +186,11 @@ abstract class RestSerializer
                 $k = $isGreedy ? substr($matches[1], 0, -1) : $matches[1];
                 if (!isset($varspecs[$k])) {
                     return '';
-                }
-
-                if ($isGreedy) {
+                } elseif ($isGreedy) {
                     return str_replace('%2F', '/', rawurlencode($varspecs[$k]));
+                } else {
+                    return rawurlencode($varspecs[$k]);
                 }
-
-                return rawurlencode($varspecs[$k]);
             },
             $operation['http']['requestUri']
         );

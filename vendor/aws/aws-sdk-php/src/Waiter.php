@@ -241,13 +241,11 @@ class Waiter implements PromisorInterface
     {
         if ($result instanceof ResultInterface) {
             return $acceptor['expected'] == $result['@metadata']['statusCode'];
-        }
-
-        if ($result instanceof AwsException && $response = $result->getResponse()) {
+        } elseif ($result instanceof AwsException && $response = $result->getResponse()) {
             return $acceptor['expected'] == $response->getStatusCode();
+        } else {
+            return false;
         }
-
-        return false;
     }
 
     /**

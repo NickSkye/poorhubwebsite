@@ -2,6 +2,7 @@
 namespace Aws\S3;
 
 use Aws\CommandInterface;
+use Aws\S3\Exception\S3Exception;
 use Psr\Http\Message\RequestInterface;
 
 /**
@@ -130,23 +131,17 @@ class S3EndpointMiddleware
             return $this->canAccelerate($command)
                 ? self::ACCELERATE_DUALSTACK
                 : self::DUALSTACK;
-        }
-
-        if ($accelerate && $this->canAccelerate($command)) {
+        } elseif ($accelerate && $this->canAccelerate($command)) {
             return self::ACCELERATE;
-        }
-
-        if ($dualStack) {
+        } elseif ($dualStack) {
             return self::DUALSTACK;
-        }
-
-        if (!$pathStyle
+        } elseif (!$pathStyle
             && self::isRequestHostStyleCompatible($command, $request)
         ) {
             return self::HOST_STYLE;
+        } else {
+            return self::PATH_STYLE;
         }
-
-        return self::PATH_STYLE;
     }
 
     private function canAccelerate(CommandInterface $command)

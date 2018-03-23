@@ -1,4 +1,4 @@
-<?php declare(strict_types=1);
+<?php
 
 namespace PhpParser\Node\Expr;
 
@@ -19,17 +19,13 @@ class FuncCall extends Expr
      * @param Node\Arg[]                    $args       Arguments
      * @param array                                   $attributes Additional attributes
      */
-    public function __construct($name, array $args = [], array $attributes = []) {
+    public function __construct($name, array $args = array(), array $attributes = array()) {
         parent::__construct($attributes);
         $this->name = $name;
         $this->args = $args;
     }
 
-    public function getSubNodeNames() : array {
-        return ['name', 'args'];
-    }
-    
-    public function getType() : string {
-        return 'Expr_FuncCall';
+    public function getSubNodeNames() {
+        return array('name', 'args');
     }
 }
