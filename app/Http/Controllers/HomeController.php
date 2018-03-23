@@ -13,7 +13,7 @@ use App\Http\Requests;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 use Yajra\Datatables\Datatables;
-
+use Illuminate\Support\Facades;
 class HomeController extends Controller
 {
 
