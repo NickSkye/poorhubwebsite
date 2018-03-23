@@ -58,6 +58,7 @@
         @endif
 
         <script src="{{ asset('assets/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js') }}"></script>
+    <link rel="stylesheet" href="https://demo.themeqx.com/classifieds/assets/plugins/owl.carousel/assets/owl.carousel.css">
 </head>
 <body>
 <!--[if lt IE 8]>
