@@ -37,9 +37,9 @@ class HomeController extends Controller
      * Installation post
      */
     public function installationPost(Request $request){
-        if ( file_exists(base_path('.env')) ) {
-            return redirect(route('home'));
-        }
+//        if ( file_exists(base_path('.env')) ) {
+//            return redirect(route('home'));
+//        }
 
         $rules = [
             'hostname' => 'required',
