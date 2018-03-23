@@ -65,20 +65,7 @@
 <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 <![endif]-->
 
-@if(config('app.is_demo'))
 
-    <div class="demoLinkWrap" style="background: #333333; padding: 10px 0">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <center><a href="https://codecanyon.net/item/themeqx-advanced-php-laravel-classified-ads-cms/18221399?ref=themeqx" class="btn btn-success"> Buy now</a></center>
-
-                </div>
-            </div>
-        </div>
-    </div>
-
-@endif
 
 <div class="header-nav-top">
     <div class="container">
@@ -88,7 +75,7 @@
                     <ul class="nav nav-pills">
                         @if(get_option('site_phone_number'))
                             <li>
-                                <a href="callto://+{{get_option('site_phone_number')}}">
+                                <a href="tel:{{get_option('site_phone_number')}}">
                                     <i class="fa fa-phone"></i>
                                     +{{ get_option('site_phone_number') }}
                                 </a>
