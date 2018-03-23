@@ -13,5 +13,4 @@ return array(
     'Mockery' => array($vendorDir . '/mockery/mockery/library'),
     'Maatwebsite\\Excel\\' => array($vendorDir . '/maatwebsite/excel/src'),
     'FontLib\\' => array($vendorDir . '/phenx/php-font-lib/src'),
-    'Doctrine\\Common\\Inflector\\' => array($vendorDir . '/doctrine/inflector/lib'),
 );

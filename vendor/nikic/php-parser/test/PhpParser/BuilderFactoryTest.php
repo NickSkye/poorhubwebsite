@@ -1,10 +1,15 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace PhpParser;
 
+use PhpParser\Builder;
+use PhpParser\Node\Arg;
 use PhpParser\Node\Expr;
+use PhpParser\Node\Expr\BinaryOp\Concat;
+use PhpParser\Node\Scalar\String_;
+use PHPUnit\Framework\TestCase;
 
-class BuilderFactoryTest extends \PHPUnit_Framework_TestCase
+class BuilderFactoryTest extends TestCase
 {
     /**
      * @dataProvider provideTestFactory
@@ -15,23 +20,76 @@ class BuilderFactoryTest extends \PHPUnit_Framework_TestCase
     }
 
     public function provideTestFactory() {
-        return array(
-            array('namespace', 'PhpParser\Builder\Namespace_'),
-            array('class',     'PhpParser\Builder\Class_'),
-            array('interface', 'PhpParser\Builder\Interface_'),
-            array('trait',     'PhpParser\Builder\Trait_'),
-            array('method',    'PhpParser\Builder\Method'),
-            array('function',  'PhpParser\Builder\Function_'),
-            array('property',  'PhpParser\Builder\Property'),
-            array('param',     'PhpParser\Builder\Param'),
-            array('use',       'PhpParser\Builder\Use_'),
+        return [
+            ['namespace', Builder\Namespace_::class],
+            ['class',     Builder\Class_::class],
+            ['interface', Builder\Interface_::class],
+            ['trait',     Builder\Trait_::class],
+            ['method',    Builder\Method::class],
+            ['function',  Builder\Function_::class],
+            ['property',  Builder\Property::class],
+            ['param',     Builder\Param::class],
+            ['use',       Builder\Use_::class],
+        ];
+    }
+
+    public function testVal() {
+        // This method is a wrapper around BuilderHelpers::normalizeValue(),
+        // which is already tested elsewhere
+        $factory = new BuilderFactory();
+        $this->assertEquals(
+            new String_("foo"),
+            $factory->val("foo")
         );
     }
 
-    public function testNonExistingMethod() {
-        $this->setExpectedException('LogicException', 'Method "foo" does not exist');
+    public function testConcat() {
         $factory = new BuilderFactory();
-        $factory->foo();
+        $varA = new Expr\Variable('a');
+        $varB = new Expr\Variable('b');
+        $varC = new Expr\Variable('c');
+
+        $this->assertEquals(
+            new Concat($varA, $varB),
+            $factory->concat($varA, $varB)
+        );
+        $this->assertEquals(
+            new Concat(new Concat($varA, $varB), $varC),
+            $factory->concat($varA, $varB, $varC)
+        );
+        $this->assertEquals(
+            new Concat(new Concat(new String_("a"), $varB), new String_("c")),
+            $factory->concat("a", $varB, "c")
+        );
+    }
+
+    /**
+     * @expectedException \LogicException
+     * @expectedExceptionMessage Expected at least two expressions
+     */
+    public function testConcatOneError() {
+        (new BuilderFactory())->concat("a");
+    }
+
+    /**
+     * @expectedException \LogicException
+     * @expectedExceptionMessage Expected string or Expr
+     */
+    public function testConcatInvalidExpr() {
+        (new BuilderFactory())->concat("a", 42);
+    }
+
+    public function testArgs() {
+        $factory = new BuilderFactory();
+        $unpack = new Arg(new Expr\Variable('c'), false, true);
+        $this->assertEquals(
+            [
+                new Arg(new Expr\Variable('a')),
+                new Arg(new String_('b')),
+                $unpack
+            ],
+            $factory->args([new Expr\Variable('a'), 'b', $unpack])
+        );
     }
 
     public function testIntegration() {
@@ -65,7 +123,7 @@ class BuilderFactoryTest extends \PHPUnit_Framework_TestCase
                 ->addStmt($factory->property('someProperty')->makeProtected())
                 ->addStmt($factory->property('anotherProperty')
                     ->makePrivate()
-                    ->setDefault(array(1, 2, 3))))
+                    ->setDefault([1, 2, 3])))
             ->getNode()
         ;
 
@@ -96,7 +154,7 @@ abstract class SomeClass extends SomeOtherClass implements A\Few, \Interfaces
 }
 EOC;
 
-        $stmts = array($node);
+        $stmts = [$node];
         $prettyPrinter = new PrettyPrinter\Standard();
         $generated = $prettyPrinter->prettyPrintFile($stmts);
 
