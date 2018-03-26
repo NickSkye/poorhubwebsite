@@ -85,9 +85,11 @@
                                 <div class="form-group">
                                     <select class="form-control select2" id="state_select" name="state">
                                         <option value=""> @lang('app.select_state') </option>
+                                        @if($selected_countries)
                                         @foreach($selected_countries->states as $state)
                                             <option value="{{ $state->id }}" {{ request('state') ==  $state->id ? 'selected':'' }} >{{ $state->state_name }}</option>
                                         @endforeach
+                                            @endif
                                     </select>
                                 </div>
 
