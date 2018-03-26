@@ -59,6 +59,14 @@
 
         <script src="{{ asset('assets/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js') }}"></script>
     <link rel="stylesheet" href="https://demo.themeqx.com/classifieds/assets/plugins/owl.carousel/assets/owl.carousel.css">
+
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+        google_ad_client: "ca-pub-3851937132042663",
+        enable_page_level_ads: true
+    });
+    </script>
 </head>
 <body>
 <!--[if lt IE 8]>
