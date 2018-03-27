@@ -235,173 +235,175 @@
                         </h4>
                     </div>
                     <hr />
+                    {{--<div class="themeqx_new_regular_ads_wrap themeqx-carousel-ads owl-carousel owl-theme owl-responsive-1000 owl-loaded">--}}
+
+
+
+
+
+                        {{--<div class="owl-stage-outer"><div class="owl-stage" style="transform: translate3d(0px, 0px, 0px); transition: 0s; width: 1187.5px;"><div class="owl-item active" style="width: 227.5px; margin-right: 10px;"><div>--}}
+                                        {{--<div itemscope="" itemtype="http://schema.org/Product" class="ads-item-thumbnail ad-box-regular">--}}
+                                            {{--<div class="ads-thumbnail">--}}
+                                                {{--<a href="https://demo.themeqx.com/classifieds/ad/33/android-smart-watches">--}}
+                                                    {{--<img itemprop="image" src="https://demo.themeqx.com/classifieds/uploads/images/thumbs/1478355882adsux-151208182848-smartwatch-apps-screens-780x439.jpg" class="img-responsive" alt="Android Smart watches">--}}
+
+                                                    {{--<span class="modern-img-indicator">--}}
+                                                                                                    {{--<i class="fa fa-file-image-o"> 2</i>--}}
+                                                                                            {{--</span>--}}
+                                                {{--</a>--}}
+                                            {{--</div>--}}
+                                            {{--<div class="caption">--}}
+                                                {{--<h4><a href="https://demo.themeqx.com/classifieds/ad/33/android-smart-watches" title="Android Smart watches"><span itemprop="name">Android Smart watches </span></a></h4>--}}
+                                                {{--<a class="price text-muted" href="https://demo.themeqx.com/classifieds/listing?category=18"> <i class="fa fa-folder-o"></i> Clothing </a>--}}
+
+                                                {{--<a class="location text-muted" href="https://demo.themeqx.com/classifieds/listing?city=42675"> <i class="fa fa-location-arrow"></i> Homer </a>--}}
+                                                {{--<p class="date-posted text-muted"> <i class="fa fa-clock-o"></i> 1 year ago</p>--}}
+                                                {{--<p class="price"> <span itemprop="price" content="1200.00"> EUR 1200.00 </span></p>--}}
+                                                {{--<link itemprop="availability" href="http://schema.org/InStock">--}}
+                                            {{--</div>--}}
+
+                                            {{--<div class="ribbon-wrapper-red"><div class="ribbon-red">Urgent</div></div>--}}
+                                        {{--</div>--}}
+                                    {{--</div></div><div class="owl-item active" style="width: 227.5px; margin-right: 10px;"><div>--}}
+                                        {{--<div itemscope="" itemtype="http://schema.org/Product" class="ads-item-thumbnail ad-box-premium">--}}
+                                            {{--<div class="ads-thumbnail">--}}
+                                                {{--<a href="https://demo.themeqx.com/classifieds/ad/31/modern-sofa-set">--}}
+                                                    {{--<img itemprop="image" src="https://demo.themeqx.com/classifieds/uploads/images/thumbs/1478336094u5i66-a7394d36be6aa3ef664831cedc3fa0dd.jpg" class="img-responsive" alt="Modern sofa set">--}}
+
+                                                    {{--<span class="modern-img-indicator">--}}
+                                                                                                    {{--<i class="fa fa-file-image-o"> 2</i>--}}
+                                                                                            {{--</span>--}}
+                                                {{--</a>--}}
+                                            {{--</div>--}}
+                                            {{--<div class="caption">--}}
+                                                {{--<h4><a href="https://demo.themeqx.com/classifieds/ad/31/modern-sofa-set" title="Modern sofa set"><span itemprop="name">Modern sofa set </span></a></h4>--}}
+                                                {{--<a class="price text-muted" href="https://demo.themeqx.com/classifieds/listing?category=6"> <i class="fa fa-folder-o"></i> Home &amp; Garden </a>--}}
+
+                                                {{--<a class="location text-muted" href="https://demo.themeqx.com/classifieds/listing?city=42802"> <i class="fa fa-location-arrow"></i> Alameda </a>--}}
+                                                {{--<p class="date-posted text-muted"> <i class="fa fa-clock-o"></i> 1 year ago</p>--}}
+                                                {{--<p class="price"> <span itemprop="price" content="1200.00"> EUR 1200.00 </span></p>--}}
+                                                {{--<link itemprop="availability" href="http://schema.org/InStock">--}}
+                                            {{--</div>--}}
+
+                                            {{--<div class="ribbon-wrapper-green"><div class="ribbon-green">Premium</div></div>--}}
+                                            {{--<div class="ribbon-wrapper-red"><div class="ribbon-red">Urgent</div></div>--}}
+                                        {{--</div>--}}
+                                    {{--</div></div><div class="owl-item active" style="width: 227.5px; margin-right: 10px;"><div>--}}
+                                        {{--<div itemscope="" itemtype="http://schema.org/Product" class="ads-item-thumbnail ad-box-regular">--}}
+                                            {{--<div class="ads-thumbnail">--}}
+                                                {{--<a href="https://demo.themeqx.com/classifieds/ad/30/toyota-avalon-2016">--}}
+                                                    {{--<img itemprop="image" src="https://demo.themeqx.com/classifieds/uploads/images/thumbs/1478294001r32mf-toyota-vios-827-827x510-81450185176.jpg" class="img-responsive" alt="Toyota Avalon 2016">--}}
+
+                                                    {{--<span class="modern-img-indicator">--}}
+                                                                                                    {{--<i class="fa fa-file-image-o"> 3</i>--}}
+                                                                                            {{--</span>--}}
+                                                {{--</a>--}}
+                                            {{--</div>--}}
+                                            {{--<div class="caption">--}}
+                                                {{--<h4><a href="https://demo.themeqx.com/classifieds/ad/30/toyota-avalon-2016" title="Toyota Avalon 2016"><span itemprop="name">Toyota Avalon 2016 </span></a></h4>--}}
+                                                {{--<a class="price text-muted" href="https://demo.themeqx.com/classifieds/listing?category=7"> <i class="fa fa-folder-o"></i> Car &amp; Vehicles  </a>--}}
+
+                                                {{--<a class="location text-muted" href="https://demo.themeqx.com/classifieds/listing?city=17000"> <i class="fa fa-location-arrow"></i> Saint-Quentin </a>--}}
+                                                {{--<p class="date-posted text-muted"> <i class="fa fa-clock-o"></i> 1 year ago</p>--}}
+                                                {{--<p class="price"> <span itemprop="price" content="57000.00"> EUR 57000.00 </span></p>--}}
+                                                {{--<link itemprop="availability" href="http://schema.org/InStock">--}}
+                                            {{--</div>--}}
+
+                                            {{--<div class="ribbon-wrapper-red"><div class="ribbon-red">Urgent</div></div>--}}
+                                        {{--</div>--}}
+                                    {{--</div></div><div class="owl-item active" style="width: 227.5px; margin-right: 10px;"><div>--}}
+                                        {{--<div itemscope="" itemtype="http://schema.org/Product" class="ads-item-thumbnail ad-box-regular">--}}
+                                            {{--<div class="ads-thumbnail">--}}
+                                                {{--<a href="https://demo.themeqx.com/classifieds/ad/29/honda-motorcycle">--}}
+                                                    {{--<img itemprop="image" src="https://demo.themeqx.com/classifieds/uploads/images/thumbs/1478293642gx2lp-c3.png" class="img-responsive" alt="Honda motorcycle">--}}
+
+                                                    {{--<span class="modern-img-indicator">--}}
+                                                                                                    {{--<i class="fa fa-file-image-o"> 1</i>--}}
+                                                                                            {{--</span>--}}
+                                                {{--</a>--}}
+                                            {{--</div>--}}
+                                            {{--<div class="caption">--}}
+                                                {{--<h4><a href="https://demo.themeqx.com/classifieds/ad/29/honda-motorcycle" title="Honda motorcycle"><span itemprop="name">Honda motorcycle </span></a></h4>--}}
+                                                {{--<a class="price text-muted" href="https://demo.themeqx.com/classifieds/listing?category=7"> <i class="fa fa-folder-o"></i> Car &amp; Vehicles  </a>--}}
+
+                                                {{--<a class="location text-muted" href="https://demo.themeqx.com/classifieds/listing?city=16999"> <i class="fa fa-location-arrow"></i> Laon </a>--}}
+                                                {{--<p class="date-posted text-muted"> <i class="fa fa-clock-o"></i> 1 year ago</p>--}}
+                                                {{--<p class="price"> <span itemprop="price" content="4530.00"> EUR 4530.00 </span></p>--}}
+                                                {{--<link itemprop="availability" href="http://schema.org/InStock">--}}
+                                            {{--</div>--}}
+
+                                            {{--<div class="ribbon-wrapper-red"><div class="ribbon-red">Urgent</div></div>--}}
+                                        {{--</div>--}}
+                                    {{--</div></div><div class="owl-item" style="width: 227.5px; margin-right: 10px;"><div>--}}
+                                        {{--<div itemscope="" itemtype="http://schema.org/Product" class="ads-item-thumbnail ad-box-premium">--}}
+                                            {{--<div class="ads-thumbnail">--}}
+                                                {{--<a href="https://demo.themeqx.com/classifieds/ad/28/giant-bicycle">--}}
+                                                    {{--<img itemprop="image" src="https://demo.themeqx.com/classifieds/uploads/images/thumbs/14782934505q7i2-recall201313261sl29er1large.jpg" class="img-responsive" alt="Giant bicycle">--}}
+
+                                                    {{--<span class="modern-img-indicator">--}}
+                                                                                                    {{--<i class="fa fa-file-image-o"> 1</i>--}}
+                                                                                            {{--</span>--}}
+                                                {{--</a>--}}
+                                            {{--</div>--}}
+                                            {{--<div class="caption">--}}
+                                                {{--<h4><a href="https://demo.themeqx.com/classifieds/ad/28/giant-bicycle" title="Giant bicycle"><span itemprop="name">Giant bicycle </span></a></h4>--}}
+                                                {{--<a class="price text-muted" href="https://demo.themeqx.com/classifieds/listing?category=7"> <i class="fa fa-folder-o"></i> Car &amp; Vehicles  </a>--}}
+
+                                                {{--<a class="location text-muted" href="https://demo.themeqx.com/classifieds/listing?city=42691"> <i class="fa fa-location-arrow"></i> Bouse </a>--}}
+                                                {{--<p class="date-posted text-muted"> <i class="fa fa-clock-o"></i> 1 year ago</p>--}}
+                                                {{--<p class="price"> <span itemprop="price" content="800.00"> EUR 800.00 </span></p>--}}
+                                                {{--<link itemprop="availability" href="http://schema.org/InStock">--}}
+                                            {{--</div>--}}
+
+                                            {{--<div class="ribbon-wrapper-green"><div class="ribbon-green">Premium</div></div>--}}
+                                            {{--<div class="ribbon-wrapper-red"><div class="ribbon-red">Urgent</div></div>--}}
+                                        {{--</div>--}}
+                                    {{--</div></div></div></div><div class="owl-controls"><div class="owl-nav"><div class="owl-prev" style=""><i class="fa fa-arrow-circle-o-left"></i></div><div class="owl-next" style=""><i class="fa fa-arrow-circle-o-right"></i></div></div><div class="owl-dots" style=""><div class="owl-dot active"><span></span></div><div class="owl-dot"><span></span></div></div></div></div>--}}
+                    {{----}}
+                    {{--ORIGINAL below V--}}
                     <div class="themeqx_new_regular_ads_wrap themeqx-carousel-ads owl-carousel owl-theme owl-responsive-1000 owl-loaded">
+                        @foreach($premium_ads as $ad)
+                            <div>
+                                <div itemscope itemtype="http://schema.org/Product" class="ads-item-thumbnail ad-box-{{$ad->price_plan}}">
+                                    <div class="ads-thumbnail">
+                                        <a href="{{ route('single_ad', [$ad->id, $ad->slug]) }}">
+                                            <img itemprop="image"  src="{{ media_url($ad->feature_img) }}" class="img-responsive" alt="{{ $ad->title }}">
+
+                                            <span class="modern-img-indicator">
+                                                @if(! empty($ad->video_url))
+                                                    <i class="fa fa-file-video-o"></i>
+                                                @else
+                                                    <i class="fa fa-file-image-o"> {{ $ad->media_img->count() }}</i>
+                                                @endif
+                                            </span>
+                                        </a>
+                                    </div>
+                                    <div class="caption">
+                                        <h4><a href="{{ route('single_ad', [$ad->id, $ad->slug]) }}" title="{{ $ad->title }}"><span itemprop="name">{{ str_limit($ad->title, 40) }} </span></a></h4>
+                                        @if($ad->category)
+                                        <a class="price text-muted" href="{{ route('listing', ['category' => $ad->category->id]) }}"> <i class="fa fa-folder-o"></i> {{ $ad->category->category_name }} </a>
+                                        @endif
+
+                                        @if($ad->city)
+                                            <a class="location text-muted" href="{{ route('listing', ['city' => $ad->city->id]) }}"> <i class="fa fa-location-arrow"></i> {{ $ad->city->city_name }} </a>
+                                        @endif
+                                        <p class="date-posted text-muted"> <i class="fa fa-clock-o"></i> {{ $ad->created_at->diffForHumans() }}</p>
+                                        <p class="price"> <span itemprop="price" content="{{$ad->price}}"> {{ themeqx_price_ng($ad->price, $ad->is_negotiable) }} </span></p>
+                                        <link itemprop="availability" href="http://schema.org/InStock" />
+                                    </div>
+
+                                    @if($ad->price_plan == 'premium')
+                                        <div class="ribbon-wrapper-green"><div class="ribbon-green">{{ ucfirst($ad->price_plan) }}</div></div>
+                                    @endif
+                                    @if($ad->mark_ad_urgent == '1')
+                                        <div class="ribbon-wrapper-red"><div class="ribbon-red">@lang('app.urgent')</div></div>
+                                    @endif
 
 
-
-
-
-                        <div class="owl-stage-outer"><div class="owl-stage" style="transform: translate3d(0px, 0px, 0px); transition: 0s; width: 1187.5px;"><div class="owl-item active" style="width: 227.5px; margin-right: 10px;"><div>
-                                        <div itemscope="" itemtype="http://schema.org/Product" class="ads-item-thumbnail ad-box-regular">
-                                            <div class="ads-thumbnail">
-                                                <a href="https://demo.themeqx.com/classifieds/ad/33/android-smart-watches">
-                                                    <img itemprop="image" src="https://demo.themeqx.com/classifieds/uploads/images/thumbs/1478355882adsux-151208182848-smartwatch-apps-screens-780x439.jpg" class="img-responsive" alt="Android Smart watches">
-
-                                                    <span class="modern-img-indicator">
-                                                                                                    <i class="fa fa-file-image-o"> 2</i>
-                                                                                            </span>
-                                                </a>
-                                            </div>
-                                            <div class="caption">
-                                                <h4><a href="https://demo.themeqx.com/classifieds/ad/33/android-smart-watches" title="Android Smart watches"><span itemprop="name">Android Smart watches </span></a></h4>
-                                                <a class="price text-muted" href="https://demo.themeqx.com/classifieds/listing?category=18"> <i class="fa fa-folder-o"></i> Clothing </a>
-
-                                                <a class="location text-muted" href="https://demo.themeqx.com/classifieds/listing?city=42675"> <i class="fa fa-location-arrow"></i> Homer </a>
-                                                <p class="date-posted text-muted"> <i class="fa fa-clock-o"></i> 1 year ago</p>
-                                                <p class="price"> <span itemprop="price" content="1200.00"> EUR 1200.00 </span></p>
-                                                <link itemprop="availability" href="http://schema.org/InStock">
-                                            </div>
-
-                                            <div class="ribbon-wrapper-red"><div class="ribbon-red">Urgent</div></div>
-                                        </div>
-                                    </div></div><div class="owl-item active" style="width: 227.5px; margin-right: 10px;"><div>
-                                        <div itemscope="" itemtype="http://schema.org/Product" class="ads-item-thumbnail ad-box-premium">
-                                            <div class="ads-thumbnail">
-                                                <a href="https://demo.themeqx.com/classifieds/ad/31/modern-sofa-set">
-                                                    <img itemprop="image" src="https://demo.themeqx.com/classifieds/uploads/images/thumbs/1478336094u5i66-a7394d36be6aa3ef664831cedc3fa0dd.jpg" class="img-responsive" alt="Modern sofa set">
-
-                                                    <span class="modern-img-indicator">
-                                                                                                    <i class="fa fa-file-image-o"> 2</i>
-                                                                                            </span>
-                                                </a>
-                                            </div>
-                                            <div class="caption">
-                                                <h4><a href="https://demo.themeqx.com/classifieds/ad/31/modern-sofa-set" title="Modern sofa set"><span itemprop="name">Modern sofa set </span></a></h4>
-                                                <a class="price text-muted" href="https://demo.themeqx.com/classifieds/listing?category=6"> <i class="fa fa-folder-o"></i> Home &amp; Garden </a>
-
-                                                <a class="location text-muted" href="https://demo.themeqx.com/classifieds/listing?city=42802"> <i class="fa fa-location-arrow"></i> Alameda </a>
-                                                <p class="date-posted text-muted"> <i class="fa fa-clock-o"></i> 1 year ago</p>
-                                                <p class="price"> <span itemprop="price" content="1200.00"> EUR 1200.00 </span></p>
-                                                <link itemprop="availability" href="http://schema.org/InStock">
-                                            </div>
-
-                                            <div class="ribbon-wrapper-green"><div class="ribbon-green">Premium</div></div>
-                                            <div class="ribbon-wrapper-red"><div class="ribbon-red">Urgent</div></div>
-                                        </div>
-                                    </div></div><div class="owl-item active" style="width: 227.5px; margin-right: 10px;"><div>
-                                        <div itemscope="" itemtype="http://schema.org/Product" class="ads-item-thumbnail ad-box-regular">
-                                            <div class="ads-thumbnail">
-                                                <a href="https://demo.themeqx.com/classifieds/ad/30/toyota-avalon-2016">
-                                                    <img itemprop="image" src="https://demo.themeqx.com/classifieds/uploads/images/thumbs/1478294001r32mf-toyota-vios-827-827x510-81450185176.jpg" class="img-responsive" alt="Toyota Avalon 2016">
-
-                                                    <span class="modern-img-indicator">
-                                                                                                    <i class="fa fa-file-image-o"> 3</i>
-                                                                                            </span>
-                                                </a>
-                                            </div>
-                                            <div class="caption">
-                                                <h4><a href="https://demo.themeqx.com/classifieds/ad/30/toyota-avalon-2016" title="Toyota Avalon 2016"><span itemprop="name">Toyota Avalon 2016 </span></a></h4>
-                                                <a class="price text-muted" href="https://demo.themeqx.com/classifieds/listing?category=7"> <i class="fa fa-folder-o"></i> Car &amp; Vehicles  </a>
-
-                                                <a class="location text-muted" href="https://demo.themeqx.com/classifieds/listing?city=17000"> <i class="fa fa-location-arrow"></i> Saint-Quentin </a>
-                                                <p class="date-posted text-muted"> <i class="fa fa-clock-o"></i> 1 year ago</p>
-                                                <p class="price"> <span itemprop="price" content="57000.00"> EUR 57000.00 </span></p>
-                                                <link itemprop="availability" href="http://schema.org/InStock">
-                                            </div>
-
-                                            <div class="ribbon-wrapper-red"><div class="ribbon-red">Urgent</div></div>
-                                        </div>
-                                    </div></div><div class="owl-item active" style="width: 227.5px; margin-right: 10px;"><div>
-                                        <div itemscope="" itemtype="http://schema.org/Product" class="ads-item-thumbnail ad-box-regular">
-                                            <div class="ads-thumbnail">
-                                                <a href="https://demo.themeqx.com/classifieds/ad/29/honda-motorcycle">
-                                                    <img itemprop="image" src="https://demo.themeqx.com/classifieds/uploads/images/thumbs/1478293642gx2lp-c3.png" class="img-responsive" alt="Honda motorcycle">
-
-                                                    <span class="modern-img-indicator">
-                                                                                                    <i class="fa fa-file-image-o"> 1</i>
-                                                                                            </span>
-                                                </a>
-                                            </div>
-                                            <div class="caption">
-                                                <h4><a href="https://demo.themeqx.com/classifieds/ad/29/honda-motorcycle" title="Honda motorcycle"><span itemprop="name">Honda motorcycle </span></a></h4>
-                                                <a class="price text-muted" href="https://demo.themeqx.com/classifieds/listing?category=7"> <i class="fa fa-folder-o"></i> Car &amp; Vehicles  </a>
-
-                                                <a class="location text-muted" href="https://demo.themeqx.com/classifieds/listing?city=16999"> <i class="fa fa-location-arrow"></i> Laon </a>
-                                                <p class="date-posted text-muted"> <i class="fa fa-clock-o"></i> 1 year ago</p>
-                                                <p class="price"> <span itemprop="price" content="4530.00"> EUR 4530.00 </span></p>
-                                                <link itemprop="availability" href="http://schema.org/InStock">
-                                            </div>
-
-                                            <div class="ribbon-wrapper-red"><div class="ribbon-red">Urgent</div></div>
-                                        </div>
-                                    </div></div><div class="owl-item" style="width: 227.5px; margin-right: 10px;"><div>
-                                        <div itemscope="" itemtype="http://schema.org/Product" class="ads-item-thumbnail ad-box-premium">
-                                            <div class="ads-thumbnail">
-                                                <a href="https://demo.themeqx.com/classifieds/ad/28/giant-bicycle">
-                                                    <img itemprop="image" src="https://demo.themeqx.com/classifieds/uploads/images/thumbs/14782934505q7i2-recall201313261sl29er1large.jpg" class="img-responsive" alt="Giant bicycle">
-
-                                                    <span class="modern-img-indicator">
-                                                                                                    <i class="fa fa-file-image-o"> 1</i>
-                                                                                            </span>
-                                                </a>
-                                            </div>
-                                            <div class="caption">
-                                                <h4><a href="https://demo.themeqx.com/classifieds/ad/28/giant-bicycle" title="Giant bicycle"><span itemprop="name">Giant bicycle </span></a></h4>
-                                                <a class="price text-muted" href="https://demo.themeqx.com/classifieds/listing?category=7"> <i class="fa fa-folder-o"></i> Car &amp; Vehicles  </a>
-
-                                                <a class="location text-muted" href="https://demo.themeqx.com/classifieds/listing?city=42691"> <i class="fa fa-location-arrow"></i> Bouse </a>
-                                                <p class="date-posted text-muted"> <i class="fa fa-clock-o"></i> 1 year ago</p>
-                                                <p class="price"> <span itemprop="price" content="800.00"> EUR 800.00 </span></p>
-                                                <link itemprop="availability" href="http://schema.org/InStock">
-                                            </div>
-
-                                            <div class="ribbon-wrapper-green"><div class="ribbon-green">Premium</div></div>
-                                            <div class="ribbon-wrapper-red"><div class="ribbon-red">Urgent</div></div>
-                                        </div>
-                                    </div></div></div></div><div class="owl-controls"><div class="owl-nav"><div class="owl-prev" style=""><i class="fa fa-arrow-circle-o-left"></i></div><div class="owl-next" style=""><i class="fa fa-arrow-circle-o-right"></i></div></div><div class="owl-dots" style=""><div class="owl-dot active"><span></span></div><div class="owl-dot"><span></span></div></div></div></div>
-                    {{--<div class="themeqx_new_regular_ads_wrap themeqx-carousel-ads">--}}
-                        {{--@foreach($premium_ads as $ad)--}}
-                            {{--<div>--}}
-                                {{--<div itemscope itemtype="http://schema.org/Product" class="ads-item-thumbnail ad-box-{{$ad->price_plan}}">--}}
-                                    {{--<div class="ads-thumbnail">--}}
-                                        {{--<a href="{{ route('single_ad', [$ad->id, $ad->slug]) }}">--}}
-                                            {{--<img itemprop="image"  src="{{ media_url($ad->feature_img) }}" class="img-responsive" alt="{{ $ad->title }}">--}}
-
-                                            {{--<span class="modern-img-indicator">--}}
-                                                {{--@if(! empty($ad->video_url))--}}
-                                                    {{--<i class="fa fa-file-video-o"></i>--}}
-                                                {{--@else--}}
-                                                    {{--<i class="fa fa-file-image-o"> {{ $ad->media_img->count() }}</i>--}}
-                                                {{--@endif--}}
-                                            {{--</span>--}}
-                                        {{--</a>--}}
-                                    {{--</div>--}}
-                                    {{--<div class="caption">--}}
-                                        {{--<h4><a href="{{ route('single_ad', [$ad->id, $ad->slug]) }}" title="{{ $ad->title }}"><span itemprop="name">{{ str_limit($ad->title, 40) }} </span></a></h4>--}}
-                                        {{--@if($ad->category)--}}
-                                        {{--<a class="price text-muted" href="{{ route('listing', ['category' => $ad->category->id]) }}"> <i class="fa fa-folder-o"></i> {{ $ad->category->category_name }} </a>--}}
-                                        {{--@endif--}}
-
-                                        {{--@if($ad->city)--}}
-                                            {{--<a class="location text-muted" href="{{ route('listing', ['city' => $ad->city->id]) }}"> <i class="fa fa-location-arrow"></i> {{ $ad->city->city_name }} </a>--}}
-                                        {{--@endif--}}
-                                        {{--<p class="date-posted text-muted"> <i class="fa fa-clock-o"></i> {{ $ad->created_at->diffForHumans() }}</p>--}}
-                                        {{--<p class="price"> <span itemprop="price" content="{{$ad->price}}"> {{ themeqx_price_ng($ad->price, $ad->is_negotiable) }} </span></p>--}}
-                                        {{--<link itemprop="availability" href="http://schema.org/InStock" />--}}
-                                    {{--</div>--}}
-
-                                    {{--@if($ad->price_plan == 'premium')--}}
-                                        {{--<div class="ribbon-wrapper-green"><div class="ribbon-green">{{ ucfirst($ad->price_plan) }}</div></div>--}}
-                                    {{--@endif--}}
-                                    {{--@if($ad->mark_ad_urgent == '1')--}}
-                                        {{--<div class="ribbon-wrapper-red"><div class="ribbon-red">@lang('app.urgent')</div></div>--}}
-                                    {{--@endif--}}
-
-
-                                {{--</div>--}}
-                            {{--</div>--}}
-                        {{--@endforeach--}}
-                    {{--</div> <!-- themeqx_new_premium_ads_wrap -->--}}
+                                </div>
+                            </div>
+                        @endforeach
+                    </div> <!-- themeqx_new_premium_ads_wrap -->
                 </div>
 
 
@@ -434,236 +436,237 @@
                         </h4>
                     </div>
                     <hr />
+                    {{--<div class="themeqx_new_premium_ads_wrap themeqx-carousel-ads owl-carousel owl-theme owl-loaded owl-responsive-1000">--}}
+
+
+
+
+
+
+
+
+                        {{--<div class="owl-stage-outer"><div class="owl-stage" style="transform: translate3d(0px, 0px, 0px); transition: 0s; width: 2300px;"><div class="owl-item active" style="width: 277.5px; margin-right: 10px;"><div>--}}
+                                        {{--<div itemscope="" itemtype="http://schema.org/Product" class="ads-item-thumbnail ad-box-regular">--}}
+                                            {{--<div class="ads-thumbnail">--}}
+                                                {{--<a href="https://demo.themeqx.com/classifieds/ad/33/android-smart-watches">--}}
+                                                    {{--<img itemprop="image" src="https://demo.themeqx.com/classifieds/uploads/images/thumbs/1478355882adsux-151208182848-smartwatch-apps-screens-780x439.jpg" class="img-responsive" alt="Android Smart watches">--}}
+
+                                                    {{--<span class="modern-img-indicator">--}}
+                                                                                                    {{--<i class="fa fa-file-image-o"> 2</i>--}}
+                                                                                            {{--</span>--}}
+                                                {{--</a>--}}
+                                            {{--</div>--}}
+                                            {{--<div class="caption">--}}
+                                                {{--<h4><a href="https://demo.themeqx.com/classifieds/ad/33/android-smart-watches" title="Android Smart watches"><span itemprop="name">Android Smart watches </span></a></h4>--}}
+                                                {{--<a class="price text-muted" href="https://demo.themeqx.com/classifieds/listing?category=18"> <i class="fa fa-folder-o"></i> Clothing </a>--}}
+
+                                                {{--<a class="location text-muted" href="https://demo.themeqx.com/classifieds/listing?city=42675"> <i class="fa fa-location-arrow"></i> Homer </a>--}}
+                                                {{--<p class="date-posted text-muted"> <i class="fa fa-clock-o"></i> 1 year ago</p>--}}
+                                                {{--<p class="price"> <span itemprop="price" content="1200.00"> EUR 1200.00 </span></p>--}}
+                                                {{--<link itemprop="availability" href="http://schema.org/InStock">--}}
+                                            {{--</div>--}}
+
+                                            {{--<div class="ribbon-wrapper-red"><div class="ribbon-red">Urgent</div></div>--}}
+                                        {{--</div>--}}
+                                    {{--</div></div><div class="owl-item active" style="width: 277.5px; margin-right: 10px;"><div>--}}
+                                        {{--<div itemscope="" itemtype="http://schema.org/Product" class="ads-item-thumbnail ad-box-regular">--}}
+                                            {{--<div class="ads-thumbnail">--}}
+                                                {{--<a href="https://demo.themeqx.com/classifieds/ad/32/classic-home-decor">--}}
+                                                    {{--<img itemprop="image" src="https://demo.themeqx.com/classifieds/uploads/images/thumbs/1478336386fv5x6-modern-home-decoration-with-area-rugs-sofa-620x465.jpg" class="img-responsive" alt="Classic home decor">--}}
+
+                                                    {{--<span class="modern-img-indicator">--}}
+                                                                                                    {{--<i class="fa fa-file-image-o"> 2</i>--}}
+                                                                                            {{--</span>--}}
+                                                {{--</a>--}}
+                                            {{--</div>--}}
+                                            {{--<div class="caption">--}}
+                                                {{--<h4><a href="https://demo.themeqx.com/classifieds/ad/32/classic-home-decor" title="Classic home decor"><span itemprop="name">Classic home decor </span></a></h4>--}}
+                                                {{--<a class="price text-muted" href="https://demo.themeqx.com/classifieds/listing?category=6"> <i class="fa fa-folder-o"></i> Home &amp; Garden </a>--}}
+
+                                                {{--<a class="location text-muted" href="https://demo.themeqx.com/classifieds/listing?city=42751"> <i class="fa fa-location-arrow"></i> Batesville </a>--}}
+                                                {{--<p class="date-posted text-muted"> <i class="fa fa-clock-o"></i> 1 year ago</p>--}}
+                                                {{--<p class="price"> <span itemprop="price" content="980.00"> EUR 980.00 (Negotiable)  </span></p>--}}
+                                                {{--<link itemprop="availability" href="http://schema.org/InStock">--}}
+                                            {{--</div>--}}
+
+                                        {{--</div>--}}
+                                    {{--</div></div><div class="owl-item active" style="width: 277.5px; margin-right: 10px;"><div>--}}
+                                        {{--<div itemscope="" itemtype="http://schema.org/Product" class="ads-item-thumbnail ad-box-regular">--}}
+                                            {{--<div class="ads-thumbnail">--}}
+                                                {{--<a href="https://demo.themeqx.com/classifieds/ad/30/toyota-avalon-2016">--}}
+                                                    {{--<img itemprop="image" src="https://demo.themeqx.com/classifieds/uploads/images/thumbs/1478294001r32mf-toyota-vios-827-827x510-81450185176.jpg" class="img-responsive" alt="Toyota Avalon 2016">--}}
+
+                                                    {{--<span class="modern-img-indicator">--}}
+                                                                                                    {{--<i class="fa fa-file-image-o"> 3</i>--}}
+                                                                                            {{--</span>--}}
+                                                {{--</a>--}}
+                                            {{--</div>--}}
+                                            {{--<div class="caption">--}}
+                                                {{--<h4><a href="https://demo.themeqx.com/classifieds/ad/30/toyota-avalon-2016" title="Toyota Avalon 2016"><span itemprop="name">Toyota Avalon 2016 </span></a></h4>--}}
+                                                {{--<a class="price text-muted" href="https://demo.themeqx.com/classifieds/listing?category=7"> <i class="fa fa-folder-o"></i> Car &amp; Vehicles  </a>--}}
+
+                                                {{--<a class="location text-muted" href="https://demo.themeqx.com/classifieds/listing?city=17000"> <i class="fa fa-location-arrow"></i> Saint-Quentin </a>--}}
+                                                {{--<p class="date-posted text-muted"> <i class="fa fa-clock-o"></i> 1 year ago</p>--}}
+                                                {{--<p class="price"> <span itemprop="price" content="57000.00"> EUR 57000.00 </span></p>--}}
+                                                {{--<link itemprop="availability" href="http://schema.org/InStock">--}}
+                                            {{--</div>--}}
+
+                                            {{--<div class="ribbon-wrapper-red"><div class="ribbon-red">Urgent</div></div>--}}
+                                        {{--</div>--}}
+                                    {{--</div></div><div class="owl-item active" style="width: 277.5px; margin-right: 10px;"><div>--}}
+                                        {{--<div itemscope="" itemtype="http://schema.org/Product" class="ads-item-thumbnail ad-box-regular">--}}
+                                            {{--<div class="ads-thumbnail">--}}
+                                                {{--<a href="https://demo.themeqx.com/classifieds/ad/29/honda-motorcycle">--}}
+                                                    {{--<img itemprop="image" src="https://demo.themeqx.com/classifieds/uploads/images/thumbs/1478293642gx2lp-c3.png" class="img-responsive" alt="Honda motorcycle">--}}
+
+                                                    {{--<span class="modern-img-indicator">--}}
+                                                                                                    {{--<i class="fa fa-file-image-o"> 1</i>--}}
+                                                                                            {{--</span>--}}
+                                                {{--</a>--}}
+                                            {{--</div>--}}
+                                            {{--<div class="caption">--}}
+                                                {{--<h4><a href="https://demo.themeqx.com/classifieds/ad/29/honda-motorcycle" title="Honda motorcycle"><span itemprop="name">Honda motorcycle </span></a></h4>--}}
+                                                {{--<a class="price text-muted" href="https://demo.themeqx.com/classifieds/listing?category=7"> <i class="fa fa-folder-o"></i> Car &amp; Vehicles  </a>--}}
+
+                                                {{--<a class="location text-muted" href="https://demo.themeqx.com/classifieds/listing?city=16999"> <i class="fa fa-location-arrow"></i> Laon </a>--}}
+                                                {{--<p class="date-posted text-muted"> <i class="fa fa-clock-o"></i> 1 year ago</p>--}}
+                                                {{--<p class="price"> <span itemprop="price" content="4530.00"> EUR 4530.00 </span></p>--}}
+                                                {{--<link itemprop="availability" href="http://schema.org/InStock">--}}
+                                            {{--</div>--}}
+
+                                            {{--<div class="ribbon-wrapper-red"><div class="ribbon-red">Urgent</div></div>--}}
+                                        {{--</div>--}}
+                                    {{--</div></div><div class="owl-item" style="width: 277.5px; margin-right: 10px;"><div>--}}
+                                        {{--<div itemscope="" itemtype="http://schema.org/Product" class="ads-item-thumbnail ad-box-regular">--}}
+                                            {{--<div class="ads-thumbnail">--}}
+                                                {{--<a href="https://demo.themeqx.com/classifieds/ad/24/cute-dog">--}}
+                                                    {{--<img itemprop="image" src="https://demo.themeqx.com/classifieds/uploads/images/thumbs/1473355793kivfp-dogs-71.jpg" class="img-responsive" alt="Cute dog">--}}
+
+                                                    {{--<span class="modern-img-indicator">--}}
+                                                                                                    {{--<i class="fa fa-file-image-o"> 1</i>--}}
+                                                                                            {{--</span>--}}
+                                                {{--</a>--}}
+                                            {{--</div>--}}
+                                            {{--<div class="caption">--}}
+                                                {{--<h4><a href="https://demo.themeqx.com/classifieds/ad/24/cute-dog" title="Cute dog"><span itemprop="name">Cute dog </span></a></h4>--}}
+                                                {{--<a class="price text-muted" href="https://demo.themeqx.com/classifieds/listing?category=9"> <i class="fa fa-folder-o"></i> Pets &amp; Animals </a>--}}
+
+                                                {{--<a class="location text-muted" href="https://demo.themeqx.com/classifieds/listing?city=5747"> <i class="fa fa-location-arrow"></i> Alawalpur </a>--}}
+                                                {{--<p class="date-posted text-muted"> <i class="fa fa-clock-o"></i> 1 year ago</p>--}}
+                                                {{--<p class="price"> <span itemprop="price" content="230.00"> EUR 230.00 </span></p>--}}
+                                                {{--<link itemprop="availability" href="http://schema.org/InStock">--}}
+                                            {{--</div>--}}
+
+                                        {{--</div>--}}
+                                    {{--</div></div><div class="owl-item" style="width: 277.5px; margin-right: 10px;"><div>--}}
+                                        {{--<div itemscope="" itemtype="http://schema.org/Product" class="ads-item-thumbnail ad-box-regular">--}}
+                                            {{--<div class="ads-thumbnail">--}}
+                                                {{--<a href="https://demo.themeqx.com/classifieds/ad/23/used-sofa-set">--}}
+                                                    {{--<img itemprop="image" src="https://demo.themeqx.com/classifieds/uploads/images/thumbs/1473353504hltgq-medeline-sofa-set.jpg" class="img-responsive" alt="Used Sofa Set">--}}
+
+                                                    {{--<span class="modern-img-indicator">--}}
+                                                                                                    {{--<i class="fa fa-file-image-o"> 1</i>--}}
+                                                                                            {{--</span>--}}
+                                                {{--</a>--}}
+                                            {{--</div>--}}
+                                            {{--<div class="caption">--}}
+                                                {{--<h4><a href="https://demo.themeqx.com/classifieds/ad/23/used-sofa-set" title="Used Sofa Set"><span itemprop="name">Used Sofa Set </span></a></h4>--}}
+                                                {{--<a class="price text-muted" href="https://demo.themeqx.com/classifieds/listing?category=6"> <i class="fa fa-folder-o"></i> Home &amp; Garden </a>--}}
+
+                                                {{--<a class="location text-muted" href="https://demo.themeqx.com/classifieds/listing?city=6488"> <i class="fa fa-location-arrow"></i> Puerto Madryn </a>--}}
+                                                {{--<p class="date-posted text-muted"> <i class="fa fa-clock-o"></i> 1 year ago</p>--}}
+                                                {{--<p class="price"> <span itemprop="price" content="400.00"> EUR 400.00 </span></p>--}}
+                                                {{--<link itemprop="availability" href="http://schema.org/InStock">--}}
+                                            {{--</div>--}}
+
+                                        {{--</div>--}}
+                                    {{--</div></div><div class="owl-item" style="width: 277.5px; margin-right: 10px;"><div>--}}
+                                        {{--<div itemscope="" itemtype="http://schema.org/Product" class="ads-item-thumbnail ad-box-regular">--}}
+                                            {{--<div class="ads-thumbnail">--}}
+                                                {{--<a href="https://demo.themeqx.com/classifieds/ad/22/segun-wooden-dinning-6-chair">--}}
+                                                    {{--<img itemprop="image" src="https://demo.themeqx.com/classifieds/uploads/images/thumbs/1473351093jeu3m-205935405-2-1000x700-new-teak-segun-wood-dining-table-set-upload-photos-rev001.jpg" class="img-responsive" alt="Segun wooden dinning, 6 chair">--}}
+
+                                                    {{--<span class="modern-img-indicator">--}}
+                                                                                                    {{--<i class="fa fa-file-image-o"> 2</i>--}}
+                                                                                            {{--</span>--}}
+                                                {{--</a>--}}
+                                            {{--</div>--}}
+                                            {{--<div class="caption">--}}
+                                                {{--<h4><a href="https://demo.themeqx.com/classifieds/ad/22/segun-wooden-dinning-6-chair" title="Segun wooden dinning, 6 chair"><span itemprop="name">Segun wooden dinning, 6 chair </span></a></h4>--}}
+                                                {{--<a class="price text-muted" href="https://demo.themeqx.com/classifieds/listing?category=6"> <i class="fa fa-folder-o"></i> Home &amp; Garden </a>--}}
+
+                                                {{--<a class="location text-muted" href="https://demo.themeqx.com/classifieds/listing?city=10204"> <i class="fa fa-location-arrow"></i> Boissevain </a>--}}
+                                                {{--<p class="date-posted text-muted"> <i class="fa fa-clock-o"></i> 1 year ago</p>--}}
+                                                {{--<p class="price"> <span itemprop="price" content="400.00"> EUR 400.00 (Negotiable)  </span></p>--}}
+                                                {{--<link itemprop="availability" href="http://schema.org/InStock">--}}
+                                            {{--</div>--}}
+
+                                        {{--</div>--}}
+                                    {{--</div></div><div class="owl-item" style="width: 277.5px; margin-right: 10px;"><div>--}}
+                                        {{--<div itemscope="" itemtype="http://schema.org/Product" class="ads-item-thumbnail ad-box-regular">--}}
+                                            {{--<div class="ads-thumbnail">--}}
+                                                {{--<a href="https://demo.themeqx.com/classifieds/ad/21/canon-600d-full-fresh-18-135-lens">--}}
+                                                    {{--<img itemprop="image" src="https://demo.themeqx.com/classifieds/uploads/images/thumbs/1473350765duyca-camera.jpg" class="img-responsive" alt="canon 600d full fresh... 18-135 lens..">--}}
+
+                                                    {{--<span class="modern-img-indicator">--}}
+                                                                                                    {{--<i class="fa fa-file-image-o"> 1</i>--}}
+                                                                                            {{--</span>--}}
+                                                {{--</a>--}}
+                                            {{--</div>--}}
+                                            {{--<div class="caption">--}}
+                                                {{--<h4><a href="https://demo.themeqx.com/classifieds/ad/21/canon-600d-full-fresh-18-135-lens" title="canon 600d full fresh... 18-135 lens.."><span itemprop="name">canon 600d full fresh... 18-135 lens.. </span></a></h4>--}}
+                                                {{--<a class="price text-muted" href="https://demo.themeqx.com/classifieds/listing?category=1"> <i class="fa fa-folder-o"></i> Electronics </a>--}}
+
+                                                {{--<a class="location text-muted" href="https://demo.themeqx.com/classifieds/listing?city=8157"> <i class="fa fa-location-arrow"></i> Aiquile </a>--}}
+                                                {{--<p class="date-posted text-muted"> <i class="fa fa-clock-o"></i> 1 year ago</p>--}}
+                                                {{--<p class="price"> <span itemprop="price" content="800.00"> EUR 800.00 </span></p>--}}
+                                                {{--<link itemprop="availability" href="http://schema.org/InStock">--}}
+                                            {{--</div>--}}
+
+                                        {{--</div>--}}
+                                    {{--</div></div></div></div><div class="owl-controls"><div class="owl-nav"><div class="owl-prev" style=""><i class="fa fa-arrow-circle-o-left"></i></div><div class="owl-next" style=""><i class="fa fa-arrow-circle-o-right"></i></div></div><div class="owl-dots" style=""><div class="owl-dot active"><span></span></div><div class="owl-dot"><span></span></div></div></div></div>--}}
+                    {{--ORIGINAL BELOW HERE V--}}
                     <div class="themeqx_new_premium_ads_wrap themeqx-carousel-ads owl-carousel owl-theme owl-loaded owl-responsive-1000">
+                        @foreach($regular_ads as $ad)
+                            <div>
+                                <div itemscope itemtype="http://schema.org/Product" class="ads-item-thumbnail ad-box-{{$ad->price_plan}}">
+                                    <div class="ads-thumbnail">
+                                        <a href="{{ route('single_ad', [$ad->id, $ad->slug]) }}">
+                                            <img itemprop="image"  src="{{ media_url($ad->feature_img) }}" class="img-responsive" alt="{{ $ad->title }}">
 
+                                            <span class="modern-img-indicator">
+                                                @if(! empty($ad->video_url))
+                                                    <i class="fa fa-file-video-o"></i>
+                                                @else
+                                                    <i class="fa fa-file-image-o"> {{ $ad->media_img->count() }}</i>
+                                                @endif
+                                            </span>
+                                        </a>
+                                    </div>
+                                    <div class="caption">
+                                        <h4><a href="{{ route('single_ad', [$ad->id, $ad->slug]) }}" title="{{ $ad->title }}"><span itemprop="name">{{ str_limit($ad->title, 40) }} </span></a></h4>
+                                        @if($ad->category)
+                                        <a class="price text-muted" href="{{ route('listing', ['category' => $ad->category->id]) }}"> <i class="fa fa-folder-o"></i> {{ $ad->category->category_name }} </a>
+                                        @endif
 
+                                        @if($ad->city)
+                                            <a class="location text-muted" href="{{ route('listing', ['city' => $ad->city->id]) }}"> <i class="fa fa-location-arrow"></i> {{ $ad->city->city_name }} </a>
+                                        @endif
+                                        <p class="date-posted text-muted"> <i class="fa fa-clock-o"></i> {{ $ad->created_at->diffForHumans() }}</p>
+                                        <p class="price"> <span itemprop="price" content="{{$ad->price}}"> {{ themeqx_price_ng($ad->price, $ad->is_negotiable) }} </span></p>
+                                        <link itemprop="availability" href="http://schema.org/InStock" />
+                                    </div>
 
-
-
-
-
-
-                        <div class="owl-stage-outer"><div class="owl-stage" style="transform: translate3d(0px, 0px, 0px); transition: 0s; width: 2300px;"><div class="owl-item active" style="width: 277.5px; margin-right: 10px;"><div>
-                                        <div itemscope="" itemtype="http://schema.org/Product" class="ads-item-thumbnail ad-box-regular">
-                                            <div class="ads-thumbnail">
-                                                <a href="https://demo.themeqx.com/classifieds/ad/33/android-smart-watches">
-                                                    <img itemprop="image" src="https://demo.themeqx.com/classifieds/uploads/images/thumbs/1478355882adsux-151208182848-smartwatch-apps-screens-780x439.jpg" class="img-responsive" alt="Android Smart watches">
-
-                                                    <span class="modern-img-indicator">
-                                                                                                    <i class="fa fa-file-image-o"> 2</i>
-                                                                                            </span>
-                                                </a>
-                                            </div>
-                                            <div class="caption">
-                                                <h4><a href="https://demo.themeqx.com/classifieds/ad/33/android-smart-watches" title="Android Smart watches"><span itemprop="name">Android Smart watches </span></a></h4>
-                                                <a class="price text-muted" href="https://demo.themeqx.com/classifieds/listing?category=18"> <i class="fa fa-folder-o"></i> Clothing </a>
-
-                                                <a class="location text-muted" href="https://demo.themeqx.com/classifieds/listing?city=42675"> <i class="fa fa-location-arrow"></i> Homer </a>
-                                                <p class="date-posted text-muted"> <i class="fa fa-clock-o"></i> 1 year ago</p>
-                                                <p class="price"> <span itemprop="price" content="1200.00"> EUR 1200.00 </span></p>
-                                                <link itemprop="availability" href="http://schema.org/InStock">
-                                            </div>
-
-                                            <div class="ribbon-wrapper-red"><div class="ribbon-red">Urgent</div></div>
-                                        </div>
-                                    </div></div><div class="owl-item active" style="width: 277.5px; margin-right: 10px;"><div>
-                                        <div itemscope="" itemtype="http://schema.org/Product" class="ads-item-thumbnail ad-box-regular">
-                                            <div class="ads-thumbnail">
-                                                <a href="https://demo.themeqx.com/classifieds/ad/32/classic-home-decor">
-                                                    <img itemprop="image" src="https://demo.themeqx.com/classifieds/uploads/images/thumbs/1478336386fv5x6-modern-home-decoration-with-area-rugs-sofa-620x465.jpg" class="img-responsive" alt="Classic home decor">
-
-                                                    <span class="modern-img-indicator">
-                                                                                                    <i class="fa fa-file-image-o"> 2</i>
-                                                                                            </span>
-                                                </a>
-                                            </div>
-                                            <div class="caption">
-                                                <h4><a href="https://demo.themeqx.com/classifieds/ad/32/classic-home-decor" title="Classic home decor"><span itemprop="name">Classic home decor </span></a></h4>
-                                                <a class="price text-muted" href="https://demo.themeqx.com/classifieds/listing?category=6"> <i class="fa fa-folder-o"></i> Home &amp; Garden </a>
-
-                                                <a class="location text-muted" href="https://demo.themeqx.com/classifieds/listing?city=42751"> <i class="fa fa-location-arrow"></i> Batesville </a>
-                                                <p class="date-posted text-muted"> <i class="fa fa-clock-o"></i> 1 year ago</p>
-                                                <p class="price"> <span itemprop="price" content="980.00"> EUR 980.00 (Negotiable)  </span></p>
-                                                <link itemprop="availability" href="http://schema.org/InStock">
-                                            </div>
-
-                                        </div>
-                                    </div></div><div class="owl-item active" style="width: 277.5px; margin-right: 10px;"><div>
-                                        <div itemscope="" itemtype="http://schema.org/Product" class="ads-item-thumbnail ad-box-regular">
-                                            <div class="ads-thumbnail">
-                                                <a href="https://demo.themeqx.com/classifieds/ad/30/toyota-avalon-2016">
-                                                    <img itemprop="image" src="https://demo.themeqx.com/classifieds/uploads/images/thumbs/1478294001r32mf-toyota-vios-827-827x510-81450185176.jpg" class="img-responsive" alt="Toyota Avalon 2016">
-
-                                                    <span class="modern-img-indicator">
-                                                                                                    <i class="fa fa-file-image-o"> 3</i>
-                                                                                            </span>
-                                                </a>
-                                            </div>
-                                            <div class="caption">
-                                                <h4><a href="https://demo.themeqx.com/classifieds/ad/30/toyota-avalon-2016" title="Toyota Avalon 2016"><span itemprop="name">Toyota Avalon 2016 </span></a></h4>
-                                                <a class="price text-muted" href="https://demo.themeqx.com/classifieds/listing?category=7"> <i class="fa fa-folder-o"></i> Car &amp; Vehicles  </a>
-
-                                                <a class="location text-muted" href="https://demo.themeqx.com/classifieds/listing?city=17000"> <i class="fa fa-location-arrow"></i> Saint-Quentin </a>
-                                                <p class="date-posted text-muted"> <i class="fa fa-clock-o"></i> 1 year ago</p>
-                                                <p class="price"> <span itemprop="price" content="57000.00"> EUR 57000.00 </span></p>
-                                                <link itemprop="availability" href="http://schema.org/InStock">
-                                            </div>
-
-                                            <div class="ribbon-wrapper-red"><div class="ribbon-red">Urgent</div></div>
-                                        </div>
-                                    </div></div><div class="owl-item active" style="width: 277.5px; margin-right: 10px;"><div>
-                                        <div itemscope="" itemtype="http://schema.org/Product" class="ads-item-thumbnail ad-box-regular">
-                                            <div class="ads-thumbnail">
-                                                <a href="https://demo.themeqx.com/classifieds/ad/29/honda-motorcycle">
-                                                    <img itemprop="image" src="https://demo.themeqx.com/classifieds/uploads/images/thumbs/1478293642gx2lp-c3.png" class="img-responsive" alt="Honda motorcycle">
-
-                                                    <span class="modern-img-indicator">
-                                                                                                    <i class="fa fa-file-image-o"> 1</i>
-                                                                                            </span>
-                                                </a>
-                                            </div>
-                                            <div class="caption">
-                                                <h4><a href="https://demo.themeqx.com/classifieds/ad/29/honda-motorcycle" title="Honda motorcycle"><span itemprop="name">Honda motorcycle </span></a></h4>
-                                                <a class="price text-muted" href="https://demo.themeqx.com/classifieds/listing?category=7"> <i class="fa fa-folder-o"></i> Car &amp; Vehicles  </a>
-
-                                                <a class="location text-muted" href="https://demo.themeqx.com/classifieds/listing?city=16999"> <i class="fa fa-location-arrow"></i> Laon </a>
-                                                <p class="date-posted text-muted"> <i class="fa fa-clock-o"></i> 1 year ago</p>
-                                                <p class="price"> <span itemprop="price" content="4530.00"> EUR 4530.00 </span></p>
-                                                <link itemprop="availability" href="http://schema.org/InStock">
-                                            </div>
-
-                                            <div class="ribbon-wrapper-red"><div class="ribbon-red">Urgent</div></div>
-                                        </div>
-                                    </div></div><div class="owl-item" style="width: 277.5px; margin-right: 10px;"><div>
-                                        <div itemscope="" itemtype="http://schema.org/Product" class="ads-item-thumbnail ad-box-regular">
-                                            <div class="ads-thumbnail">
-                                                <a href="https://demo.themeqx.com/classifieds/ad/24/cute-dog">
-                                                    <img itemprop="image" src="https://demo.themeqx.com/classifieds/uploads/images/thumbs/1473355793kivfp-dogs-71.jpg" class="img-responsive" alt="Cute dog">
-
-                                                    <span class="modern-img-indicator">
-                                                                                                    <i class="fa fa-file-image-o"> 1</i>
-                                                                                            </span>
-                                                </a>
-                                            </div>
-                                            <div class="caption">
-                                                <h4><a href="https://demo.themeqx.com/classifieds/ad/24/cute-dog" title="Cute dog"><span itemprop="name">Cute dog </span></a></h4>
-                                                <a class="price text-muted" href="https://demo.themeqx.com/classifieds/listing?category=9"> <i class="fa fa-folder-o"></i> Pets &amp; Animals </a>
-
-                                                <a class="location text-muted" href="https://demo.themeqx.com/classifieds/listing?city=5747"> <i class="fa fa-location-arrow"></i> Alawalpur </a>
-                                                <p class="date-posted text-muted"> <i class="fa fa-clock-o"></i> 1 year ago</p>
-                                                <p class="price"> <span itemprop="price" content="230.00"> EUR 230.00 </span></p>
-                                                <link itemprop="availability" href="http://schema.org/InStock">
-                                            </div>
-
-                                        </div>
-                                    </div></div><div class="owl-item" style="width: 277.5px; margin-right: 10px;"><div>
-                                        <div itemscope="" itemtype="http://schema.org/Product" class="ads-item-thumbnail ad-box-regular">
-                                            <div class="ads-thumbnail">
-                                                <a href="https://demo.themeqx.com/classifieds/ad/23/used-sofa-set">
-                                                    <img itemprop="image" src="https://demo.themeqx.com/classifieds/uploads/images/thumbs/1473353504hltgq-medeline-sofa-set.jpg" class="img-responsive" alt="Used Sofa Set">
-
-                                                    <span class="modern-img-indicator">
-                                                                                                    <i class="fa fa-file-image-o"> 1</i>
-                                                                                            </span>
-                                                </a>
-                                            </div>
-                                            <div class="caption">
-                                                <h4><a href="https://demo.themeqx.com/classifieds/ad/23/used-sofa-set" title="Used Sofa Set"><span itemprop="name">Used Sofa Set </span></a></h4>
-                                                <a class="price text-muted" href="https://demo.themeqx.com/classifieds/listing?category=6"> <i class="fa fa-folder-o"></i> Home &amp; Garden </a>
-
-                                                <a class="location text-muted" href="https://demo.themeqx.com/classifieds/listing?city=6488"> <i class="fa fa-location-arrow"></i> Puerto Madryn </a>
-                                                <p class="date-posted text-muted"> <i class="fa fa-clock-o"></i> 1 year ago</p>
-                                                <p class="price"> <span itemprop="price" content="400.00"> EUR 400.00 </span></p>
-                                                <link itemprop="availability" href="http://schema.org/InStock">
-                                            </div>
-
-                                        </div>
-                                    </div></div><div class="owl-item" style="width: 277.5px; margin-right: 10px;"><div>
-                                        <div itemscope="" itemtype="http://schema.org/Product" class="ads-item-thumbnail ad-box-regular">
-                                            <div class="ads-thumbnail">
-                                                <a href="https://demo.themeqx.com/classifieds/ad/22/segun-wooden-dinning-6-chair">
-                                                    <img itemprop="image" src="https://demo.themeqx.com/classifieds/uploads/images/thumbs/1473351093jeu3m-205935405-2-1000x700-new-teak-segun-wood-dining-table-set-upload-photos-rev001.jpg" class="img-responsive" alt="Segun wooden dinning, 6 chair">
-
-                                                    <span class="modern-img-indicator">
-                                                                                                    <i class="fa fa-file-image-o"> 2</i>
-                                                                                            </span>
-                                                </a>
-                                            </div>
-                                            <div class="caption">
-                                                <h4><a href="https://demo.themeqx.com/classifieds/ad/22/segun-wooden-dinning-6-chair" title="Segun wooden dinning, 6 chair"><span itemprop="name">Segun wooden dinning, 6 chair </span></a></h4>
-                                                <a class="price text-muted" href="https://demo.themeqx.com/classifieds/listing?category=6"> <i class="fa fa-folder-o"></i> Home &amp; Garden </a>
-
-                                                <a class="location text-muted" href="https://demo.themeqx.com/classifieds/listing?city=10204"> <i class="fa fa-location-arrow"></i> Boissevain </a>
-                                                <p class="date-posted text-muted"> <i class="fa fa-clock-o"></i> 1 year ago</p>
-                                                <p class="price"> <span itemprop="price" content="400.00"> EUR 400.00 (Negotiable)  </span></p>
-                                                <link itemprop="availability" href="http://schema.org/InStock">
-                                            </div>
-
-                                        </div>
-                                    </div></div><div class="owl-item" style="width: 277.5px; margin-right: 10px;"><div>
-                                        <div itemscope="" itemtype="http://schema.org/Product" class="ads-item-thumbnail ad-box-regular">
-                                            <div class="ads-thumbnail">
-                                                <a href="https://demo.themeqx.com/classifieds/ad/21/canon-600d-full-fresh-18-135-lens">
-                                                    <img itemprop="image" src="https://demo.themeqx.com/classifieds/uploads/images/thumbs/1473350765duyca-camera.jpg" class="img-responsive" alt="canon 600d full fresh... 18-135 lens..">
-
-                                                    <span class="modern-img-indicator">
-                                                                                                    <i class="fa fa-file-image-o"> 1</i>
-                                                                                            </span>
-                                                </a>
-                                            </div>
-                                            <div class="caption">
-                                                <h4><a href="https://demo.themeqx.com/classifieds/ad/21/canon-600d-full-fresh-18-135-lens" title="canon 600d full fresh... 18-135 lens.."><span itemprop="name">canon 600d full fresh... 18-135 lens.. </span></a></h4>
-                                                <a class="price text-muted" href="https://demo.themeqx.com/classifieds/listing?category=1"> <i class="fa fa-folder-o"></i> Electronics </a>
-
-                                                <a class="location text-muted" href="https://demo.themeqx.com/classifieds/listing?city=8157"> <i class="fa fa-location-arrow"></i> Aiquile </a>
-                                                <p class="date-posted text-muted"> <i class="fa fa-clock-o"></i> 1 year ago</p>
-                                                <p class="price"> <span itemprop="price" content="800.00"> EUR 800.00 </span></p>
-                                                <link itemprop="availability" href="http://schema.org/InStock">
-                                            </div>
-
-                                        </div>
-                                    </div></div></div></div><div class="owl-controls"><div class="owl-nav"><div class="owl-prev" style=""><i class="fa fa-arrow-circle-o-left"></i></div><div class="owl-next" style=""><i class="fa fa-arrow-circle-o-right"></i></div></div><div class="owl-dots" style=""><div class="owl-dot active"><span></span></div><div class="owl-dot"><span></span></div></div></div></div>
-                    {{--<div class="themeqx_new_premium_ads_wrap themeqx-carousel-ads">--}}
-                        {{--@foreach($regular_ads as $ad)--}}
-                            {{--<div>--}}
-                                {{--<div itemscope itemtype="http://schema.org/Product" class="ads-item-thumbnail ad-box-{{$ad->price_plan}}">--}}
-                                    {{--<div class="ads-thumbnail">--}}
-                                        {{--<a href="{{ route('single_ad', [$ad->id, $ad->slug]) }}">--}}
-                                            {{--<img itemprop="image"  src="{{ media_url($ad->feature_img) }}" class="img-responsive" alt="{{ $ad->title }}">--}}
-
-                                            {{--<span class="modern-img-indicator">--}}
-                                                {{--@if(! empty($ad->video_url))--}}
-                                                    {{--<i class="fa fa-file-video-o"></i>--}}
-                                                {{--@else--}}
-                                                    {{--<i class="fa fa-file-image-o"> {{ $ad->media_img->count() }}</i>--}}
-                                                {{--@endif--}}
-                                            {{--</span>--}}
-                                        {{--</a>--}}
-                                    {{--</div>--}}
-                                    {{--<div class="caption">--}}
-                                        {{--<h4><a href="{{ route('single_ad', [$ad->id, $ad->slug]) }}" title="{{ $ad->title }}"><span itemprop="name">{{ str_limit($ad->title, 40) }} </span></a></h4>--}}
-                                        {{--@if($ad->category)--}}
-                                        {{--<a class="price text-muted" href="{{ route('listing', ['category' => $ad->category->id]) }}"> <i class="fa fa-folder-o"></i> {{ $ad->category->category_name }} </a>--}}
-                                        {{--@endif--}}
-
-                                        {{--@if($ad->city)--}}
-                                            {{--<a class="location text-muted" href="{{ route('listing', ['city' => $ad->city->id]) }}"> <i class="fa fa-location-arrow"></i> {{ $ad->city->city_name }} </a>--}}
-                                        {{--@endif--}}
-                                        {{--<p class="date-posted text-muted"> <i class="fa fa-clock-o"></i> {{ $ad->created_at->diffForHumans() }}</p>--}}
-                                        {{--<p class="price"> <span itemprop="price" content="{{$ad->price}}"> {{ themeqx_price_ng($ad->price, $ad->is_negotiable) }} </span></p>--}}
-                                        {{--<link itemprop="availability" href="http://schema.org/InStock" />--}}
-                                    {{--</div>--}}
-
-                                    {{--@if($ad->price_plan == 'premium')--}}
-                                        {{--<div class="ribbon-wrapper-green"><div class="ribbon-green">{{ ucfirst($ad->price_plan) }}</div></div>--}}
-                                    {{--@endif--}}
-                                    {{--@if($ad->mark_ad_urgent == '1')--}}
-                                        {{--<div class="ribbon-wrapper-red"><div class="ribbon-red">@lang('app.urgent')</div></div>--}}
-                                    {{--@endif--}}
-                                {{--</div>--}}
-                            {{--</div>--}}
-                        {{--@endforeach--}}
-                    {{--</div> <!-- themeqx_new_premium_ads_wrap -->--}}
+                                    @if($ad->price_plan == 'premium')
+                                        <div class="ribbon-wrapper-green"><div class="ribbon-green">{{ ucfirst($ad->price_plan) }}</div></div>
+                                    @endif
+                                    @if($ad->mark_ad_urgent == '1')
+                                        <div class="ribbon-wrapper-red"><div class="ribbon-red">@lang('app.urgent')</div></div>
+                                    @endif
+                                </div>
+                            </div>
+                        @endforeach
+                    </div> <!-- themeqx_new_premium_ads_wrap -->
                 </div>
 
             </div>
