@@ -398,12 +398,10 @@
                     <div class="themeqx_new_regular_ads_wrap themeqx-carousel-ads owl-carousel owl-theme owl-responsive-1000 owl-loaded">
                         @foreach($premium_ads as $ad)
                             <div class="owl-stage-outer">
-                                <div class="owl-stage"
-                                     style="transform: translate3d(0px, 0px, 0px); transition: 0s; width: 2300px;">
+                                <div class="owl-stage" style="transform: translate3d(0px, 0px, 0px); transition: 0s; width: 2300px;">
                                     <div class="owl-item active" style="width: 277.5px; margin-right: 10px;">
                                         <div>
-                                            <div itemscope itemtype="http://schema.org/Product"
-                                                 class="ads-item-thumbnail ad-box-{{$ad->price_plan}}">
+                                            <div itemscope itemtype="http://schema.org/Product" class="ads-item-thumbnail ad-box-{{$ad->price_plan}}">
                                                 <div class="ads-thumbnail">
                                                     <a href="{{ route('single_ad', [$ad->id, $ad->slug]) }}">
                                                         <img itemprop="image"
@@ -468,6 +466,16 @@
                 </div>
 
 
+            </div>
+        </div>
+        <div class="owl-controls">
+            <div class="owl-nav">
+                <div class="owl-prev" style=""><i class="fa fa-arrow-circle-o-left"></i></div>
+                <div class="owl-next" style=""><i class="fa fa-arrow-circle-o-right"></i></div>
+            </div>
+            <div class="owl-dots" style="">
+                <div class="owl-dot active"><span></span></div>
+                <div class="owl-dot"><span></span></div>
             </div>
         </div>
         @if($enable_monetize)
