@@ -820,13 +820,14 @@ img.thumb-listing-table {
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
+    height: 400px;
 }
 .modern-top-intoduce-section::before {
     background: #000000 none repeat scroll 0 0;
     content: "";
     height: 100%;
     left: 0;
-    opacity: 0.6;
+    opacity: 0.2;
     position: absolute;
     top: 0;
     width: 100%;
