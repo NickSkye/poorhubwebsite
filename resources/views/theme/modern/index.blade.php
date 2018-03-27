@@ -468,16 +468,7 @@
 
             </div>
         </div>
-        <div class="owl-controls">
-            <div class="owl-nav">
-                <div class="owl-prev" style=""><i class="fa fa-arrow-circle-o-left"></i></div>
-                <div class="owl-next" style=""><i class="fa fa-arrow-circle-o-right"></i></div>
-            </div>
-            <div class="owl-dots" style="">
-                <div class="owl-dot active"><span></span></div>
-                <div class="owl-dot"><span></span></div>
-            </div>
-        </div>
+        
         @if($enable_monetize)
             <div class="container">
                 <div class="row">
