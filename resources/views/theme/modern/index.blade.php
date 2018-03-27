@@ -179,6 +179,8 @@
                     <hr />
                     <div class="themeqx_new_regular_ads_wrap themeqx-carousel-ads">
                         @foreach($urgent_ads as $ad)
+                            <div class="owl-stage-outer"><div class="owl-stage" style="transform: translate3d(0px, 0px, 0px); transition: 0s; width: 2300px;"><div class="owl-item active" style="width: 277.5px; margin-right: 10px;"><div>
+                            <div itemscope="" itemtype="http://schema.org/Product" class="ads-item-thumbnail ad-box-regular">
                             <div>
                                 <div itemscope itemtype="http://schema.org/Product" class="ads-item-thumbnail ad-box-{{$ad->price_plan}}">
                                     <div class="ads-thumbnail">
@@ -216,6 +218,8 @@
                                     @endif
                                 </div>
                             </div>
+                    </div>
+                </div>
                         @endforeach
                     </div> <!-- themeqx_new_premium_ads_wrap -->
                 </div>
