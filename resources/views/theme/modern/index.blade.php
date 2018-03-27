@@ -397,64 +397,70 @@
                     {{--ORIGINAL below V--}}
                     <div class="themeqx_new_regular_ads_wrap themeqx-carousel-ads owl-carousel owl-theme owl-responsive-1000 owl-loaded">
                         @foreach($premium_ads as $ad)
+                            <div class="owl-stage-outer">
+                                <div class="owl-stage"
+                                     style="transform: translate3d(0px, 0px, 0px); transition: 0s; width: 2300px;">
+                                    <div class="owl-item active" style="width: 277.5px; margin-right: 10px;">
+                                        <div>
+                                            <div itemscope itemtype="http://schema.org/Product"
+                                                 class="ads-item-thumbnail ad-box-{{$ad->price_plan}}">
+                                                <div class="ads-thumbnail">
+                                                    <a href="{{ route('single_ad', [$ad->id, $ad->slug]) }}">
+                                                        <img itemprop="image"
+                                                             src="{{ media_url($ad->feature_img) }}"
+                                                             class="img-responsive" alt="{{ $ad->title }}">
 
-                            <div>
-                                <div itemscope itemtype="http://schema.org/Product"
-                                     class="ads-item-thumbnail ad-box-{{$ad->price_plan}}">
-                                    <div class="ads-thumbnail">
-                                        <a href="{{ route('single_ad', [$ad->id, $ad->slug]) }}">
-                                            <img itemprop="image"
-                                                 src="{{ media_url($ad->feature_img) }}"
-                                                 class="img-responsive" alt="{{ $ad->title }}">
-
-                                            <span class="modern-img-indicator">
+                                                        <span class="modern-img-indicator">
                                                 @if(! empty($ad->video_url))
-                                                    <i class="fa fa-file-video-o"></i>
-                                                @else
-                                                    <i class="fa fa-file-image-o"> {{ $ad->media_img->count() }}</i>
-                                                @endif
+                                                                <i class="fa fa-file-video-o"></i>
+                                                            @else
+                                                                <i class="fa fa-file-image-o"> {{ $ad->media_img->count() }}</i>
+                                                            @endif
                                             </span>
-                                        </a>
-                                    </div>
-                                    <div class="caption">
-                                        <h4><a href="{{ route('single_ad', [$ad->id, $ad->slug]) }}"
-                                               title="{{ $ad->title }}"><span
-                                                        itemprop="name">{{ str_limit($ad->title, 40) }} </span></a>
-                                        </h4>
-                                        @if($ad->category)
-                                            <a class="price text-muted"
-                                               href="{{ route('listing', ['category' => $ad->category->id]) }}">
-                                                <i class="fa fa-folder-o"></i> {{ $ad->category->category_name }}
-                                            </a>
-                                        @endif
+                                                    </a>
+                                                </div>
+                                                <div class="caption">
+                                                    <h4><a href="{{ route('single_ad', [$ad->id, $ad->slug]) }}"
+                                                           title="{{ $ad->title }}"><span
+                                                                    itemprop="name">{{ str_limit($ad->title, 40) }} </span></a>
+                                                    </h4>
+                                                    @if($ad->category)
+                                                        <a class="price text-muted"
+                                                           href="{{ route('listing', ['category' => $ad->category->id]) }}">
+                                                            <i class="fa fa-folder-o"></i> {{ $ad->category->category_name }}
+                                                        </a>
+                                                    @endif
 
-                                        @if($ad->city)
-                                            <a class="location text-muted"
-                                               href="{{ route('listing', ['city' => $ad->city->id]) }}">
-                                                <i class="fa fa-location-arrow"></i> {{ $ad->city->city_name }}
-                                            </a>
-                                        @endif
-                                        <p class="date-posted text-muted"><i
-                                                    class="fa fa-clock-o"></i> {{ $ad->created_at->diffForHumans() }}
-                                        </p>
-                                        <p class="price"><span itemprop="price"
-                                                               content="{{$ad->price}}"> {{ themeqx_price_ng($ad->price, $ad->is_negotiable) }} </span>
-                                        </p>
-                                        <link itemprop="availability" href="http://schema.org/InStock"/>
-                                    </div>
+                                                    @if($ad->city)
+                                                        <a class="location text-muted"
+                                                           href="{{ route('listing', ['city' => $ad->city->id]) }}">
+                                                            <i class="fa fa-location-arrow"></i> {{ $ad->city->city_name }}
+                                                        </a>
+                                                    @endif
+                                                    <p class="date-posted text-muted"><i
+                                                                class="fa fa-clock-o"></i> {{ $ad->created_at->diffForHumans() }}
+                                                    </p>
+                                                    <p class="price"><span itemprop="price"
+                                                                           content="{{$ad->price}}"> {{ themeqx_price_ng($ad->price, $ad->is_negotiable) }} </span>
+                                                    </p>
+                                                    <link itemprop="availability" href="http://schema.org/InStock"/>
+                                                </div>
 
-                                    @if($ad->price_plan == 'premium')
-                                        <div class="ribbon-wrapper-green">
-                                            <div class="ribbon-green">{{ ucfirst($ad->price_plan) }}</div>
+                                                @if($ad->price_plan == 'premium')
+                                                    <div class="ribbon-wrapper-green">
+                                                        <div class="ribbon-green">{{ ucfirst($ad->price_plan) }}</div>
+                                                    </div>
+                                                @endif
+                                                @if($ad->mark_ad_urgent == '1')
+                                                    <div class="ribbon-wrapper-red">
+                                                        <div class="ribbon-red">@lang('app.urgent')</div>
+                                                    </div>
+                                                @endif
+
+
+                                            </div>
                                         </div>
-                                    @endif
-                                    @if($ad->mark_ad_urgent == '1')
-                                        <div class="ribbon-wrapper-red">
-                                            <div class="ribbon-red">@lang('app.urgent')</div>
-                                        </div>
-                                    @endif
-
-
+                                    </div>
                                 </div>
                             </div>
                         @endforeach
