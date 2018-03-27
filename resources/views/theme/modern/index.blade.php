@@ -177,7 +177,7 @@
                         </h4>
                     </div>
                     <hr />
-                    <div class="themeqx_new_regular_ads_wrap themeqx-carousel-ads">
+                    <div class="themeqx_new_regular_ads_wrap themeqx-carousel-ads owl-carousel owl-theme owl-responsive-1000 owl-loaded">
                         @foreach($urgent_ads as $ad)
                             <div class="owl-stage-outer"><div class="owl-stage" style="transform: translate3d(0px, 0px, 0px); transition: 0s; width: 2300px;"><div class="owl-item active" style="width: 277.5px; margin-right: 10px;"><div>
                             <div itemscope="" itemtype="http://schema.org/Product" class="ads-item-thumbnail ad-box-regular">
