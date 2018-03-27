@@ -465,7 +465,7 @@
                                 </div>
                             </div>
                     </div>
-                    
+
                                 </div>
 
 
@@ -760,7 +760,7 @@
                                                                 </div>
                                                                 @endforeach
                                                             </div> <!-- themeqx_new_premium_ads_wrap -->
-                                                        </div>
+                                                        
                                                     </div>
                                                 </div>
                                             </div>
